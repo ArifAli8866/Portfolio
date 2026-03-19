@@ -1,957 +1,2510 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arif Ali | Portfolio</title>
+    <title>Arif Ali | CS Student & Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-
-<header class="main-header">
-    <nav class="navbar">
-        <div class="logo">Arif Ali</div>
-
-        <!-- Hamburger Menu -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <div class="otw-banner" id="otwBanner">
+        <div class="otw-inner">
+            <div class="otw-pulse"></div>
+            <span class="otw-text">
+                🎯 <strong>Open to Internships & Part-time Roles</strong> — Available for Web Dev, Cybersecurity &
+                Software Engineering positions
+            </span>
+            <a href="#contact" class="otw-btn">Get in Touch</a>
+            <button class="otw-close" id="otwClose" aria-label="Close">✕</button>
         </div>
+    </div>
+    <!-- ── LOADER ── -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-ring"></div>
+            <div class="loader-text">LOADING<span class="loader-dots">...</span></div>
+        </div>
+    </div>
 
-        <ul class="nav-links">
-            <li><a href="#home" class="nav-item">Home</a></li>
-            <li><a href="#about" class="nav-item">About</a></li>
-            <li><a href="#services" class="nav-item">Services</a></li>
-            <li><a href="#education" class="nav-item">Education</a></li>
-            <li><a href="#projects" class="nav-item">Projects</a></li>
-            <li><a href="#skills" class="nav-item">Skills</a></li>
-            <li><a href="#testimonials" class="nav-item">Testimonials</a></li>
-            <li><a href="#contact" class="nav-item">Contact</a></li>
+    <!-- ── PROGRESS BAR ── -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ── PARTICLES ── -->
+    <canvas id="particles"></canvas>
+
+    <!-- ── CURSOR ── -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- ── BACK TO TOP ── -->
+    <button class="back-top" id="backTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ════════════ NAVBAR ════════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="nav-logo">
+            <span class="logo-bracket">&lt;</span>Arif<span class="logo-slash">/</span>Ali<span
+                class="logo-bracket">&gt;</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-a active">Home</a></li>
+            <li><a href="#about" class="nav-a">About</a></li>
+            <li><a href="#services" class="nav-a">Services</a></li>
+            <li><a href="#education" class="nav-a">Education</a></li>
+            <li><a href="#experience" class="nav-a">Experience</a></li>
+            <li><a href="#projects" class="nav-a">Projects</a></li>
+            <li><a href="#skills" class="nav-a">Skills</a></li>
+            <li><a href="#testimonials" class="nav-a" .nav - cv - btn { display: inline - flex; align - items: center;
+                    gap: 6px; background: rgba(251, 191, 36, .1); border: 1px solid rgba(251, 191, 36, .35); color:
+                    #fbbf24; font - size: .75rem; font - weight: 700; padding: 6px 14px; border - radius: 50px; text -
+                    decoration: none; transition: var(--trans); } .nav - cv - btn:hover { background: #fbbf24; color:
+                    var(--c - bg); box - shadow: 0 4px 16px rgba(251, 191, 36, .3); } @media(max - width: 900px) { .nav
+                    - cv - btn { display: none; } }>Reviews</a></li>
+            <li><a href="#contact" class="nav-a">Contact</a></li>
+            <li><a href="#journey" class="nav-a">Journey</a></li>
+            <li><a href="#github" class="nav-a">GitHub</a></li>
+            <li><a href="#coding" class="nav-a">Coding Stats</a></li>
+            <li><a href="#cv" class="nav-a">Resume</a></li>
+            <li><a href="#blog" class="nav-a">Blog</a></li>
         </ul>
+        <div class="nav-right">
+            <a href="Arif-Ali-CV.pdf" download class="nav-cv-btn" title="Download CV">
+                <i class="fas fa-download"></i>
+                <span>CV</span>
+            </a>
+            <button class="theme-btn" id="themeBtn" title="Toggle theme">
+                <i class="fas fa-sun" id="themeIcon"></i>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
-</header>
 
-
-
-<section class="hero">
-    <div class="container">
-        <div class="hero-image">
-    <div class="hero-profile-container">
-        <div class="profile-border-spin"></div>
-        <div class="profile-pic">
-            <img src="a.png" alt="Arif Ali">
-        </div>
-    </div>
-</div>
-
-        <div class="hero-content">
-            <h3>Hello, I'm</h3>
-            <h1>Arif Ali</h1>
-            <p class="role">And I'm a <span class="typing-text"></span></p>
-            <p class="description">
-                I am a passionate Computer Science student at FAST National University with a strong interest in 
-                software development, cybersecurity, and modern web technologies. I love building real-world projects 
-                and continuously learning new skills.
-            </p>
-
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/ArifAli8866" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-
-            <a href="#" class="btn">Download CV</a>
-        </div>
-    </div>
-</section>
-
-<section class="about" id="about">
-    <div class="container about-container">
-        <div class="about-content">
-            <h1>About <span>Me</span></h1>
-            <h3>I'm a <span>Computer Science Student</span></h3>
-            <p>
-                I am currently pursuing a Bachelor of Computer Science (BCS) at FAST National University.
-                I have experience in C++, web development, and problem-solving, with a growing interest in 
-                cybersecurity and ethical hacking.
-            </p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="about-image">
-    <div class="about-profile-wrapper">
-        <div class="about-glow-layer"></div>
-        <div class="about-main-circle">
-            <img src="b.png" alt="About Arif Ali" id="about-pic">
-        </div>
-    </div>
-</div>
-    </div>
-</section>
-
-<section class="services-section" id="services">
-    <span class="sub-heading">Expert Solutions</span>
-    <h1 class="main-title">My Specialized Services</h1>
-    
-    <div class="cards-container">
-        <div class="card card--purple active">
-            <div class="card__outer">
-                <div class="card__inner">
-                    <span class="icon">
-                        <i class="fas fa-layer-group"></i>
-                    </span>
-                    <p class="title">Web & App Tools</p>
-                    <p class="service-desc">WordPress, Firebase, Replit, and Trillet AI integration for modern apps.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> WordPress Dev</li>
-                        <li><i class="fas fa-check"></i> Firebase Auth</li>
-                        <li><i class="fas fa-check"></i> AI Integration</li>
-                    </ul>
+    <!-- ════════════ HERO ════════════ -->
+    <section class="hero" id="home">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-pulse"></span>
+                    Available for Opportunities
                 </div>
-                <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-
-        <div class="card card--red">
-            <div class="card__outer">
-                <div class="card__inner">
-                    <span class="icon">
-                        <i class="fas fa-code"></i>
-                    </span>
-                    <p class="title">Programming</p>
-                    <p class="service-desc">Deep logic in C++, Python, Java, and modern JavaScript/HTML/CSS.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Python Scripts</li>
-                        <li><i class="fas fa-check"></i> C++ Systems</li>
-                        <li><i class="fas fa-check"></i> Java Apps</li>
-                    </ul>
+                <h1 class="hero-name">
+                    <span class="line1">Hello, I'm</span>
+                    <span class="line2">Arif Ali</span>
+                </h1>
+                <div class="hero-role">
+                    <span class="role-prefix">// </span>
+                    <span id="typed"></span><span class="cursor-blink">|</span>
                 </div>
-                <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-
-        <div class="card card--green">
-            <div class="card__outer">
-                <div class="card__inner">
-                    <span class="icon">
-                        <i class="fas fa-pen-nib"></i>
-                    </span>
-                    <p class="title">Design & Media</p>
-                    <p class="service-desc">Photoshop, CorelDRAW, Canva, and professional Video Editing.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Graphic Design</li>
-                        <li><i class="fas fa-check"></i> Video Editing</li>
-                        <li><i class="fas fa-check"></i> MS Office Pro</li>
-                    </ul>
-                </div>
-                <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<section class="education" id="education">
-    <h2 class="heading">My <span>Education</span></h2>
-
-    <div class="education-container">
-
-        <!-- FAST -->
-        <div class="edu-card">
-            <div class="edu-icon">
-                <i class="fas fa-university"></i>
-            </div>
-            <div class="edu-content">
-                <h3>National University of Computer & Emerging Sciences (FAST)</h3>
-                <p class="edu-degree">Bachelor of Computer Science (BCS)</p>
-                <span class="edu-time">Aug 2024 – Aug 2028</span>
-                <p class="edu-desc">
-                    Currently completed <strong>3 semesters</strong>, focusing on programming, problem-solving,
-                    data structures, and computer systems.
+                <p class="hero-desc">
+                    Passionate CS student at <strong>FAST National University</strong> building real-world solutions
+                    in web development, cybersecurity, and AI-integrated systems.
                 </p>
-            </div>
-        </div>
-
-        <!-- Intermediate -->
-        <div class="edu-card">
-            <div class="edu-icon">
-                <i class="fas fa-school"></i>
-            </div>
-            <div class="edu-content">
-                <h3>Govt. Higher Secondary School Umer Daho Sarhad</h3>
-                <p class="edu-degree">Intermediate – Engineering</p>
-                <span class="edu-time">May 2022 – May 2024</span>
-            </div>
-        </div>
-
-        <!-- Matric -->
-        <div class="edu-card">
-            <div class="edu-icon">
-                <i class="fas fa-book"></i>
-            </div>
-            <div class="edu-content">
-                <h3>Govt. High School Umer Daho Sarhad</h3>
-                <p class="edu-degree">Matriculation – Science</p>
-                <span class="edu-time">May 2021 – May 2022</span>
-            </div>
-        </div>
-
-    </div>
-
-    <h2 class="heading mt" style="margin-top: 50px;">Professional <span>Courses</span></h2>
-
-<section class="mt">
-    <h2 style="text-align: center; color: var(--primary-color);">Certifications & Courses</h2>
-    <div class="courses-container">
-        <div class="course-card reveal">
-            <div class="card-content">
-                Foundations of Cybersecurity <span>Google</span>
-            </div>
-            <div class="card-border"></div>
-        </div>
-        <div class="course-card reveal">
-            <div class="card-content">
-                Connect & Protect: Networks and Network Security <span>Google</span>
-            </div>
-            <div class="card-border"></div>
-        </div>
-        <div class="course-card reveal">
-            <div class="card-content">
-                Play It Safe: Manage Security Risks <span>Google</span>
-            </div>
-            <div class="card-border"></div>
-        </div>
-        <div class="course-card reveal">
-            <div class="card-content">
-                Tools of the Trade: Linux & SQL <span>Google</span>
-            </div>
-            <div class="card-border"></div>
-        </div>
-        <div class="course-card reveal">
-            <div class="card-content">
-                AWS Solutions Architecture – Job Simulation
-            </div>
-            <div class="card-border"></div>
-        </div>
-        <div class="course-card reveal">
-            <div class="card-content">
-                Diploma in Information Technology (DIT) <span>SBTE</span>
-            </div>
-            <div class="card-border"></div>
-        </div>
-        <div class="course-card reveal">
-            <div class="card-content">
-                Freelancing <span>DigiSkills</span>
-            </div>
-            <div class="card-border"></div>
-        </div>
-        <div class="course-card reveal">
-            <div class="card-content">
-                WordPress Development <span>DigiSkills</span>
-            </div>
-            <div class="card-border"></div>
-        </div>
-        <div class="course-card reveal">
-            <div class="card-content">
-                Typing Speed Certificate <span>TypingTest.me</span>
-            </div>
-            <div class="card-border"></div>
-        </div>
-    </div>
-</section>
-</section>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<section class="projects" id="projects">
-    <h2 class="heading" style="text-align: center !important; width: 100% !important; display: block !important; margin: 0 auto 50px !important; font-size: 3.5rem !important;">
-    My <span style="color: #008075 !important;">Projects</span>
-</h2>
-
-    <div class="projects-container">
-        <div class="project-card">
-            <div class="card-inner">
-                <div class="icon-box"><i class="fas fa-graduation-cap"></i></div>
-                <h3>FAST NUCES Aggregate Calculator</h3>
-                <div class="tech-stack">
-                    <span>JavaScript</span><span>Tailwind CSS</span>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn-glow">
+                        <i class="fas fa-rocket"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn-ghost">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="Arif-Ali-CV.pdf" download class="btn-cv">
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
                 </div>
-                <p class="desc">A web-based merit calculator for FAST NUCES students with accurate section-wise scoring and NU Test calculations.</p>
-                <a href="#" class="view-btn">View Project →</a>
+                <div class="hero-socials">
+                    <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank" class="social-pill">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/ArifAli8866" target="_blank" class="social-pill">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-pill"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/arifali.2007/" target="_blank" class="social-pill"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+                <div class="orb-wrap">
+                    <div class="orb-track orb-track-1"></div>
+                    <div class="orb-track orb-track-2"></div>
+                    <div class="orb-track orb-track-3"></div>
+                    <div class="orb-glow-bg"></div>
+                    <div class="orb-photo">
+                        <img src="a.png" alt="Arif Ali"
+                            onerror="this.parentElement.innerHTML='<div class=orb-fallback><i class=\'fas fa-user-astronaut\'></i><span>ARIF ALI</span></div>'">
+                    </div>
+                    <!-- Orbiting tech badges -->
+                    <div class="orbit-tag orbit-tag-1"><i class="fab fa-python"></i> Python</div>
+                    <div class="orbit-tag orbit-tag-2"><i class="fas fa-shield-alt"></i> Security</div>
+                    <div class="orbit-tag orbit-tag-3"><i class="fab fa-js"></i> JS</div>
+                    <div class="orbit-tag orbit-tag-4"><i class="fas fa-code"></i> C++</div>
+                </div>
             </div>
         </div>
 
-        <div class="project-card">
-            <div class="card-inner">
-                <div class="icon-box"><i class="fas fa-calculator"></i></div>
-                <h3>Smart Calc</h3>
-                <div class="tech-stack">
-                    <span>HTML</span><span>CSS</span><span>JS</span>
-                </div>
-                <p class="desc">A simple, interactive web calculator for basic math operations with a clean, user-friendly interface.</p>
-                <a href="#" class="view-btn">View Project →</a>
+        <div class="hero-stats-bar">
+            <div class="hstat">
+                <div class="hstat-num" data-target="15">0</div>
+                <div class="hstat-lbl">Projects</div>
+            </div>
+            <div class="hstat-div"></div>
+            <div class="hstat">
+                <div class="hstat-num" data-target="13">0</div>
+                <div class="hstat-lbl">Certifications</div>
+            </div>
+            <div class="hstat-div"></div>
+            <div class="hstat">
+                <div class="hstat-num" data-target="3">0</div>
+                <div class="hstat-lbl">Semesters FAST</div>
+            </div>
+            <div class="hstat-div"></div>
+            <div class="hstat">
+                <div class="hstat-num" data-target="120">0</div>
+                <div class="hstat-lbl">WPM Typing</div>
             </div>
         </div>
 
-        <div class="project-card">
-            <div class="card-inner">
-                <div class="icon-box"><i class="fas fa-user-tie"></i></div>
-                <h3>Portfolio Website</h3>
-                <div class="tech-stack">
-                    <span>HTML</span><span>CSS</span><span>JS</span>
+        <div class="scroll-cue">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- ════════════ ABOUT ════════════ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-col reveal-left">
+                    <div class="about-frame">
+                        <div class="about-frame-deco deco-1"></div>
+                        <div class="about-frame-deco deco-2"></div>
+                        <div class="about-img-box">
+                            <img src="b.png" alt="Arif Ali"
+                                onerror="this.parentElement.innerHTML='<div class=about-fallback><i class=\'fas fa-code\'></i><p>// ARIF ALI</p></div>'">
+                        </div>
+                        <div class="about-chip">
+                            <i class="fas fa-university"></i>
+                            <div><strong>FAST NUCES</strong><span>2024 – 2028</span></div>
+                        </div>
+                    </div>
                 </div>
-                <p class="desc">Personal portfolio website showcasing my projects, education, skills, and professional achievements.</p>
-                <a href="#" class="view-btn">View Project →</a>
+                <div class="about-text-col reveal-right">
+                    <div class="section-eyebrow">About Me</div>
+                    <h2 class="section-h2">CS Student &amp;<br><span class="grad-text">Developer</span></h2>
+                    <p class="about-p">Currently pursuing a <strong>Bachelor of Computer Science (BCS)</strong> at FAST
+                        National University. I've completed 3 semesters with a focus on programming, data structures,
+                        algorithms, and computer systems.</p>
+                    <p class="about-p">From building AI-powered dashboards and security toolkits to crafting C++ GUI
+                        games, I turn ideas into real, impactful solutions.</p>
+                    <div class="about-pills">
+                        <span class="pill"><i class="fas fa-graduation-cap"></i> FAST NUCES</span>
+                        <span class="pill"><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+                        <span class="pill"><i class="fas fa-globe"></i> Web Dev</span>
+                        <span class="pill"><i class="fas fa-robot"></i> AI Enthusiast</span>
+                        <span class="pill"><i class="fab fa-github"></i> Open Source</span>
+                        <span class="pill"><i class="fab fa-linux"></i> Linux</span>
+                    </div>
+                    <a href="#contact" class="btn-glow" style="margin-top:28px; display:inline-flex;">
+                        Let's Connect <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="project-card">
-            <div class="card-inner">
-                <div class="icon-box"><i class="fas fa-address-book"></i></div>
-                <h3>Contact Management System</h3>
-                <div class="tech-stack">
-                    <span>C++</span>
+    <!-- ════════════ SERVICES ════════════ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-eyebrow center">What I Offer</div>
+            <h2 class="section-h2 center reveal">My <span class="grad-text">Services</span></h2>
+            <div class="services-grid">
+                <div class="srv-card reveal-up" style="--i:0">
+                    <div class="srv-num">01</div>
+                    <div class="srv-icon-wrap c-blue"><i class="fas fa-code"></i></div>
+                    <h3>Programming &amp; Dev</h3>
+                    <p>Deep expertise in C++, Python, Java, JavaScript with a focus on efficient and scalable solutions.
+                    </p>
+                    <ul class="srv-list">
+                        <li>C++ Systems &amp; Game Dev</li>
+                        <li>Python Scripting</li>
+                        <li>Web Frontend</li>
+                        <li>Java Applications</li>
+                    </ul>
+                    <div class="srv-line"></div>
                 </div>
-                <p class="desc">A console-based application to manage contacts, search, add, edit, and delete entries efficiently using file handling.</p>
-                <a href="#" class="view-btn">View Project →</a>
+                <div class="srv-card reveal-up" style="--i:1">
+                    <div class="srv-num">02</div>
+                    <div class="srv-icon-wrap c-purple"><i class="fas fa-layer-group"></i></div>
+                    <h3>Web &amp; App Tools</h3>
+                    <p>WordPress, Firebase, AI integration, and modern web tools for dynamic, scalable web apps.</p>
+                    <ul class="srv-list">
+                        <li>WordPress Development</li>
+                        <li>Firebase Auth &amp; DB</li>
+                        <li>AI API Integration</li>
+                        <li>Responsive UI Design</li>
+                    </ul>
+                    <div class="srv-line"></div>
+                </div>
+                <div class="srv-card reveal-up" style="--i:2">
+                    <div class="srv-num">03</div>
+                    <div class="srv-icon-wrap c-pink"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Cybersecurity</h3>
+                    <p>Network security, vulnerability assessment, ethical hacking, and Linux-based security tooling.
+                    </p>
+                    <ul class="srv-list">
+                        <li>Vulnerability Scanning</li>
+                        <li>Network Security</li>
+                        <li>OSINT &amp; Recon</li>
+                        <li>Linux SOC Monitoring</li>
+                    </ul>
+                    <div class="srv-line"></div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="project-card">
-            <div class="card-inner">
-                <div class="icon-box"><i class="fas fa-question-circle"></i></div>
-                <h3>Quiz Website</h3>
-                <div class="tech-stack">
-                    <span>C++</span><span>HTML</span>
+    <section class="techstack" id="techstack">
+        <div class="container">
+            <div class="section-eyebrow center">Tools I Use</div>
+            <h2 class="section-h2 center reveal">Tech <span class="grad-text">Stack</span></h2>
+
+            <div class="ts-ticker-wrap">
+                <div class="ts-ticker" id="tsTicker">
+                    <!-- Row 1 — left scroll -->
+                    <div class="ts-row ts-row-left">
+                        <div class="ts-item"><i class="fab fa-python" style="color:#3572A5"></i><span>Python</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-code" style="color:#06b6d4"></i><span>C++</span></div>
+                        <div class="ts-item"><i class="fab fa-js" style="color:#f1e05a"></i><span>JavaScript</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-html5" style="color:#e34c26"></i><span>HTML5</span></div>
+                        <div class="ts-item"><i class="fab fa-css3-alt" style="color:#264de4"></i><span>CSS3</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-java" style="color:#b07219"></i><span>Java</span></div>
+                        <div class="ts-item"><i class="fab fa-linux" style="color:#fbbf24"></i><span>Linux</span></div>
+                        <div class="ts-item"><i class="fab fa-wordpress"
+                                style="color:#21759b"></i><span>WordPress</span></div>
+                        <div class="ts-item"><i class="fas fa-fire" style="color:#ff9900"></i><span>Firebase</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-git-alt" style="color:#f05032"></i><span>Git</span></div>
+                        <div class="ts-item"><i class="fab fa-github" style="color:#a8bbd4"></i><span>GitHub</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-aws" style="color:#ff9900"></i><span>AWS</span></div>
+                        <!-- duplicate for infinite loop -->
+                        <div class="ts-item"><i class="fab fa-python" style="color:#3572A5"></i><span>Python</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-code" style="color:#06b6d4"></i><span>C++</span></div>
+                        <div class="ts-item"><i class="fab fa-js" style="color:#f1e05a"></i><span>JavaScript</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-html5" style="color:#e34c26"></i><span>HTML5</span></div>
+                        <div class="ts-item"><i class="fab fa-css3-alt" style="color:#264de4"></i><span>CSS3</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-java" style="color:#b07219"></i><span>Java</span></div>
+                        <div class="ts-item"><i class="fab fa-linux" style="color:#fbbf24"></i><span>Linux</span></div>
+                        <div class="ts-item"><i class="fab fa-wordpress"
+                                style="color:#21759b"></i><span>WordPress</span></div>
+                        <div class="ts-item"><i class="fas fa-fire" style="color:#ff9900"></i><span>Firebase</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-git-alt" style="color:#f05032"></i><span>Git</span></div>
+                        <div class="ts-item"><i class="fab fa-github" style="color:#a8bbd4"></i><span>GitHub</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-aws" style="color:#ff9900"></i><span>AWS</span></div>
+                    </div>
+                    <!-- Row 2 — right scroll -->
+                    <div class="ts-row ts-row-right">
+                        <div class="ts-item"><i class="fas fa-shield-alt" style="color:#ec4899"></i><span>Kali
+                                Linux</span></div>
+                        <div class="ts-item"><i class="fas fa-database" style="color:#00d4ff"></i><span>SQL</span></div>
+                        <div class="ts-item"><i class="fas fa-chart-bar" style="color:#7c3aed"></i><span>Chart.js</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-robot" style="color:#10b981"></i><span>AI APIs</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-paint-brush"
+                                style="color:#ec4899"></i><span>Photoshop</span></div>
+                        <div class="ts-item"><i class="fas fa-gamepad" style="color:#06b6d4"></i><span>SFML</span></div>
+                        <div class="ts-item"><i class="fas fa-terminal" style="color:#fbbf24"></i><span>Bash</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-search" style="color:#ef4444"></i><span>OSINT</span></div>
+                        <div class="ts-item"><i class="fas fa-network-wired"
+                                style="color:#00d4ff"></i><span>Networking</span></div>
+                        <div class="ts-item"><i class="fas fa-video" style="color:#a78bfa"></i><span>Video Edit</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-bootstrap" style="color:#7c3aed"></i><span>Tailwind</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-file-excel" style="color:#10b981"></i><span>MS
+                                Office</span></div>
+                        <!-- duplicate -->
+                        <div class="ts-item"><i class="fas fa-shield-alt" style="color:#ec4899"></i><span>Kali
+                                Linux</span></div>
+                        <div class="ts-item"><i class="fas fa-database" style="color:#00d4ff"></i><span>SQL</span></div>
+                        <div class="ts-item"><i class="fas fa-chart-bar" style="color:#7c3aed"></i><span>Chart.js</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-robot" style="color:#10b981"></i><span>AI APIs</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-paint-brush"
+                                style="color:#ec4899"></i><span>Photoshop</span></div>
+                        <div class="ts-item"><i class="fas fa-gamepad" style="color:#06b6d4"></i><span>SFML</span></div>
+                        <div class="ts-item"><i class="fas fa-terminal" style="color:#fbbf24"></i><span>Bash</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-search" style="color:#ef4444"></i><span>OSINT</span></div>
+                        <div class="ts-item"><i class="fas fa-network-wired"
+                                style="color:#00d4ff"></i><span>Networking</span></div>
+                        <div class="ts-item"><i class="fas fa-video" style="color:#a78bfa"></i><span>Video Edit</span>
+                        </div>
+                        <div class="ts-item"><i class="fab fa-bootstrap" style="color:#7c3aed"></i><span>Tailwind</span>
+                        </div>
+                        <div class="ts-item"><i class="fas fa-file-excel" style="color:#10b981"></i><span>MS
+                                Office</span></div>
+                    </div>
                 </div>
-                <p class="desc">Interactive web quiz application with multiple choice questions, scoring system, and file-based data storage.</p>
-                <a href="#" class="view-btn">View Project →</a>
             </div>
         </div>
+    </section>
 
-        <div class="project-card">
-            <div class="card-inner">
-                <div class="icon-box"><i class="fas fa-gamepad"></i></div>
-                <h3>Tic-Tac-Toe Game</h3>
-                <div class="tech-stack">
-                    <span>C++</span><span>SFML</span>
+
+
+    <section class="dream-companies" id="dream">
+        <div class="container">
+            <div class="section-eyebrow center">Career Goals</div>
+            <h2 class="section-h2 center reveal">Dream <span class="grad-text">Companies</span></h2>
+            <p class="dream-subtitle reveal">These are the companies I'm actively targeting for internships and
+                full-time roles after graduating from FAST NUCES.</p>
+
+            <div class="dc-grid">
+                <div class="dc-card reveal-up" style="--i:0">
+                    <div class="dc-logo" style="--dc:#4285f4"><i class="fab fa-google"></i></div>
+                    <div class="dc-name">Google</div>
+                    <div class="dc-role">SWE / Security Engineer</div>
+                    <div class="dc-match">
+                        <div class="dc-match-bar">
+                            <div class="dc-fill" data-w="90" style="--mc:#4285f4"></div>
+                        </div>
+                        <span>90% skill match</span>
+                    </div>
                 </div>
-                <p class="desc">Classic game with a GUI interface, interactive gameplay, real-time rendering, and score tracking.</p>
-                <a href="#" class="view-btn">View Project →</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="card-inner">
-                <div class="icon-box"><i class="fas fa-bubbles"></i></div>
-                <h3>Bubble Game</h3>
-                <div class="tech-stack">
-                    <span>C++</span><span>SFML</span>
+                <div class="dc-card reveal-up" style="--i:1">
+                    <div class="dc-logo" style="--dc:#0078d4"><i class="fab fa-microsoft"></i></div>
+                    <div class="dc-name">Microsoft</div>
+                    <div class="dc-role">Software Engineer Intern</div>
+                    <div class="dc-match">
+                        <div class="dc-match-bar">
+                            <div class="dc-fill" data-w="85" style="--mc:#0078d4"></div>
+                        </div>
+                        <span>85% skill match</span>
+                    </div>
                 </div>
-                <p class="desc">Fun bubble shooting game featuring levels, collision detection, and animated gameplay using graphics libraries.</p>
-                <a href="#" class="view-btn">View Project →</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-
-<section class="skills" id="skills">
-    <h2 class="heading" style="text-align: center !important; width: 100% !important; display: block !important; margin: 0 auto 50px !important; font-size: 3.5rem !important;">
-    My <span style="color: #008075 !important;">Skills & Tech Stack</span>
-</h2>
-
-    <div class="skills-container">
-        <div class="skill-category">
-            <div class="category-icon"><i class="fas fa-code"></i></div>
-            <h3>Programming Languages</h3>
-            
-            <div class="skill-item">
-                <div class="skill-info">
-                    <span class="skill-name">C++</span>
-                    <span class="skill-number">0%</span>
+                <div class="dc-card reveal-up" style="--i:2">
+                    <div class="dc-logo" style="--dc:#ff9900"><i class="fab fa-aws"></i></div>
+                    <div class="dc-name">Amazon / AWS</div>
+                    <div class="dc-role">Cloud / Security Intern</div>
+                    <div class="dc-match">
+                        <div class="dc-match-bar">
+                            <div class="dc-fill" data-w="88" style="--mc:#ff9900"></div>
+                        </div>
+                        <span>88% skill match</span>
+                    </div>
                 </div>
-                <div class="progress-line" data-percent="95%"><span></span></div>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-info">
-                    <span class="skill-name">Python</span>
-                    <span class="skill-number">0%</span>
+                <div class="dc-card reveal-up" style="--i:3">
+                    <div class="dc-logo" style="--dc:#0a66c2"><i class="fab fa-linkedin"></i></div>
+                    <div class="dc-name">LinkedIn</div>
+                    <div class="dc-role">Frontend / Full Stack Intern</div>
+                    <div class="dc-match">
+                        <div class="dc-match-bar">
+                            <div class="dc-fill" data-w="80" style="--mc:#0a66c2"></div>
+                        </div>
+                        <span>80% skill match</span>
+                    </div>
                 </div>
-                <div class="progress-line" data-percent="85%"><span></span></div>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-info">
-                    <span class="skill-name">JS / HTML / CSS</span>
-                    <span class="skill-number">0%</span>
+                <div class="dc-card reveal-up" style="--i:4">
+                    <div class="dc-logo" style="--dc:#1877f2"><i class="fab fa-meta"></i></div>
+                    <div class="dc-name">Meta</div>
+                    <div class="dc-role">Software Engineer Intern</div>
+                    <div class="dc-match">
+                        <div class="dc-match-bar">
+                            <div class="dc-fill" data-w="78" style="--mc:#1877f2"></div>
+                        </div>
+                        <span>78% skill match</span>
+                    </div>
                 </div>
-                <div class="progress-line" data-percent="90%"><span></span></div>
-            </div>
-        </div>
-
-        <div class="skill-category">
-            <div class="category-icon"><i class="fas fa-layer-group"></i></div>
-            <h3>Web & App Tools</h3>
-            
-            <div class="skill-item">
-                <div class="skill-info">
-                    <span class="skill-name">WordPress</span>
-                    <span class="skill-number">0%</span>
-                </div>
-                <div class="progress-line" data-percent="90%"><span></span></div>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-info">
-                    <span class="skill-name">Google Firebase</span>
-                    <span class="skill-number">0%</span>
-                </div>
-                <div class="progress-line" data-percent="75%"><span></span></div>
-            </div>
-        </div>
-
-        <div class="skill-category">
-            <div class="category-icon"><i class="fas fa-paint-brush"></i></div>
-            <h3>Design & Creative</h3>
-            
-            <div class="skill-item">
-                <div class="skill-info">
-                    <span class="skill-name">Photoshop / Canva</span>
-                    <span class="skill-number">0%</span>
-                </div>
-                <div class="progress-line" data-percent="95%"><span></span></div>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-info">
-                    <span class="skill-name">Video Editing</span>
-                    <span class="skill-number">0%</span>
-                </div>
-                <div class="progress-line" data-percent="90%"><span></span></div>
-            </div>
-        </div>
-
-        <div class="skill-category">
-            <div class="category-icon"><i class="fas fa-shield-alt"></i></div>
-            <h3>Cybersecurity</h3>
-            
-            <div class="skill-item">
-                <div class="skill-info">
-                    <span class="skill-name">Network Security</span>
-                    <span class="skill-number">0%</span>
-                </div>
-                <div class="progress-line" data-percent="75%"><span></span></div>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-info">
-                    <span class="skill-name">Ethical Hacking</span>
-                    <span class="skill-number">0%</span>
-                </div>
-                <div class="progress-line" data-percent="70%"><span></span></div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-
-
-
-
-<section class="testimonials" id="testimonials">
-   <h2 class="heading" style="text-align: center !important; width: 100% !important; display: block !important; margin: 0 auto 50px !important; font-size: 3.5rem !important; margin-top: 0;">
-    Client <span style="color: #008075 !important;">Testimonials</span>
-</h2>
-
-    <div class="testimonials-container">
-        <div class="testimonial-box">
-            <i class="fas fa-quote-left quote-icon"></i>
-            <div class="testi-img">
-                <img src="projectmentor.png" alt="Mentor">
-            </div>
-            <h3>Project Mentor</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>"Arif is a hardworking student with strong problem-solving skills and a great passion for learning new technologies."</p>
-            <div class="design-element"></div>
-        </div>
-
-        <div class="testimonial-box featured">
-            <i class="fas fa-quote-left quote-icon"></i>
-            <div class="testi-img">
-                <img src="unipeer.png" alt="Peer">
-            </div>
-            <h3>University Peer</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>"Working with Arif on programming projects has always been a great experience. He is focused and dedicated to quality code."</p>
-            <div class="design-element"></div>
-        </div>
-
-        <div class="testimonial-box">
-            <i class="fas fa-quote-left quote-icon"></i>
-            <div class="testi-img">
-                <img src="sharda.jpg" alt="Instructor">
-            </div>
-            <h3>Instructor</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p>"Arif shows excellent commitment to his studies and demonstrates strong analytical thinking in technical subjects."</p>
-            <div class="design-element"></div>
-        </div>
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <h2 class="heading" style="text-align: center !important; width: 100% !important; display: block !important; margin: 0 auto 50px !important; font-size: 3.5rem !important;">
-        Contact <span style="color: #008075 !important;">Me</span>
-    </h2>
-
-    <div class="contact-wrapper">
-        <form action="#" id="contact-form">
-            <div class="input-group">
-                <div class="field-container">
-                    <input type="text" placeholder="Full Name" required>
-                    <span class="focus-border"></span>
-                </div>
-                <div class="field-container">
-                    <input type="email" placeholder="Email Address" required>
-                    <span class="focus-border"></span>
+                <div class="dc-card reveal-up dc-local" style="--i:5">
+                    <div class="dc-logo" style="--dc:#10b981"><i class="fas fa-building"></i></div>
+                    <div class="dc-name">Pakistani Tech Firms</div>
+                    <div class="dc-role">Systems Ltd · Netsol · Arbisoft</div>
+                    <div class="dc-match">
+                        <div class="dc-match-bar">
+                            <div class="dc-fill" data-w="95" style="--mc:#10b981"></div>
+                        </div>
+                        <span>95% skill match</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="input-group">
-                <div class="field-container">
-                    <input type="number" placeholder="Phone Number">
-                    <span class="focus-border"></span>
+            <div class="dc-cta reveal">
+                <p>Are you a recruiter or hiring manager?</p>
+                <a href="#contact" class="btn-glow"><i class="fas fa-handshake"></i> Let's Talk</a>
+                <a href="Arif-Ali-CV.pdf" download class="btn-cv"><i class="fas fa-download"></i> <span>Download
+                        CV</span></a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- ════════════ EDUCATION ════════════ -->
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-eyebrow center">Academic Journey</div>
+            <h2 class="section-h2 center reveal">My <span class="grad-text">Education</span></h2>
+
+            <div class="edu-timeline">
+                <!-- FAST -->
+                <div class="edu-node reveal-left">
+                    <div class="edu-connector">
+                        <div class="edu-dot-ring"></div>
+                        <div class="edu-dot-core"><i class="fas fa-university"></i></div>
+                    </div>
+                    <div class="edu-card-new">
+                        <div class="edu-card-glow"></div>
+                        <div class="edu-card-header-new">
+                            <div class="edu-badge-year">2024–2028</div>
+                            <div class="edu-status active-status">● In Progress</div>
+                        </div>
+                        <h3 class="edu-inst">National University of Computer &amp; Emerging Sciences <span>(FAST)</span>
+                        </h3>
+                        <div class="edu-degree-tag"><i class="fas fa-scroll"></i> Bachelor of Computer Science (BCS)
+                        </div>
+                        <p class="edu-detail">Completed <strong>3 semesters</strong> with focus on programming, data
+                            structures, algorithms, and computer systems. Active in project development and
+                            cybersecurity research.</p>
+                        <div class="edu-skills-row">
+                            <span>DSA</span><span>OOP</span><span>C++</span><span>Networks</span><span>OS</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="field-container">
-                    <input type="text" placeholder="Subject">
-                    <span class="focus-border"></span>
+
+                <!-- Intermediate -->
+                <div class="edu-node reveal-right">
+                    <div class="edu-connector">
+                        <div class="edu-dot-ring ring-purple"></div>
+                        <div class="edu-dot-core core-purple"><i class="fas fa-school"></i></div>
+                    </div>
+                    <div class="edu-card-new">
+                        <div class="edu-card-glow glow-purple"></div>
+                        <div class="edu-card-header-new">
+                            <div class="edu-badge-year">2022–2024</div>
+                            <div class="edu-status done-status">✓ Completed</div>
+                        </div>
+                        <h3 class="edu-inst">Govt. Higher Secondary School Umer Daho Sarhad</h3>
+                        <div class="edu-degree-tag tag-purple"><i class="fas fa-book-open"></i> Intermediate –
+                            Engineering</div>
+                    </div>
+                </div>
+
+                <!-- Matric -->
+                <div class="edu-node reveal-left">
+                    <div class="edu-connector">
+                        <div class="edu-dot-ring ring-pink"></div>
+                        <div class="edu-dot-core core-pink"><i class="fas fa-book"></i></div>
+                    </div>
+                    <div class="edu-card-new">
+                        <div class="edu-card-glow glow-pink"></div>
+                        <div class="edu-card-header-new">
+                            <div class="edu-badge-year">2021–2022</div>
+                            <div class="edu-status done-status">✓ Completed</div>
+                        </div>
+                        <h3 class="edu-inst">Govt. High School Umer Daho Sarhad</h3>
+                        <div class="edu-degree-tag tag-pink"><i class="fas fa-book"></i> Matriculation – Science</div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="field-container full-width">
-                <textarea cols="30" rows="8" placeholder="Your Message" required></textarea>
-                <span class="focus-border"></span>
-            </div>
 
-            <div class="btn-container">
-                <button type="submit" class="submit-btn">
-                    <span>Send Message</span>
-                    <i class="fas fa-paper-plane"></i>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+     ARIF ALI — EXPERIENCE SECTION (v2)
+     PASTE in index.html BETWEEN education section and certs section
+     Find: <!-- ════════════ CERTIFICATES ════════════ -->
+
+
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-eyebrow center">Work History</div>
+            <h2 class="section-h2 center reveal">Experience &amp; <span class="grad-text">Internships</span></h2>
+
+            <!-- ── Filter Tabs ── -->
+            <div class="exp-tabs reveal">
+                <button class="exp-tab active" data-filter="all">
+                    <i class="fas fa-th"></i> All <span class="tab-count" id="count-all">10</span>
+                </button>
+                <button class="exp-tab" data-filter="internship">
+                    <i class="fas fa-building"></i> Internships <span class="tab-count" id="count-intern">5</span>
+                </button>
+                <button class="exp-tab" data-filter="freelance">
+                    <i class="fas fa-laptop"></i> Freelance <span class="tab-count" id="count-free">2</span>
+                </button>
+                <button class="exp-tab" data-filter="community">
+                    <i class="fas fa-users"></i> Community <span class="tab-count" id="count-comm">3</span>
                 </button>
             </div>
-        </form>
-    </div>
-</section>
 
-<footer class="footer-area">
-    <div class="waves">
-        <div class="wave" id="wave1"></div>
-        <div class="wave" id="wave2"></div>
-        <div class="wave" id="wave3"></div>
-        <div class="wave" id="wave4"></div>
-    </div>
+            <!-- ── View Toggle ── -->
+            <div class="exp-view-toggle reveal">
+                <button class="view-btn active" id="viewGrid" title="Grid View"><i class="fas fa-th-large"></i></button>
+                <button class="view-btn" id="viewList" title="List View"><i class="fas fa-list"></i></button>
+            </div>
 
+            <!-- ══════════════════════════════════
+             INTERNSHIPS BLOCK
+        ══════════════════════════════════ -->
+            <div class="exp-block-label reveal">
+                <i class="fas fa-briefcase"></i>
+                <span>Internships</span>
+                <div class="exp-block-line"></div>
+            </div>
 
-    <div class="footer-content">
-        <div class="footer-social-icons">
-            <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/ArifAli8866" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <div class="exp-grid" id="expGrid">
+
+                <!-- ① CodeAlpha National Ambassador — CURRENT / FEATURED -->
+                <div class="exp-card exp-card-featured reveal-up" style="--i:0" data-type="internship">
+                    <div class="exp-ribbon">Current</div>
+                    <div class="exp-card-glow" style="--eg:#00d4ff"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#00d4ff">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="exp-logo-ping"></div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">National Ambassador Intern</h3>
+                            <div class="exp-company">
+                                <i class="fas fa-shield-alt" style="color:#00d4ff;font-size:.75rem;"></i>
+                                CodeAlpha
+                            </div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge exp-badge-green"><span class="badge-live-dot"></span>
+                                    Active</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> Mar 2026 – Present</span>
+                                <span class="exp-loc"><i class="fas fa-globe"></i> Remote</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#00d4ff">Ambassador</div>
+                    </div>
+                    <p class="exp-desc">Selected for the <strong>National Ambassador Program</strong> at CodeAlpha —
+                        representing the organization and helping promote technology learning opportunities within the
+                        student community across Pakistan.</p>
+                    <ul class="exp-bullets">
+                        <li>Promoting CodeAlpha programs, internships, and learning resources among students and
+                            academic communities</li>
+                        <li>Building awareness about technology learning opportunities and professional development
+                            programs</li>
+                        <li>Engaging students and encouraging participation in technical initiatives and events</li>
+                        <li>Developing communication, leadership, and networking skills while representing the
+                            organization</li>
+                        <li>Supporting community growth by connecting students with industry-focused learning
+                            opportunities</li>
+                    </ul>
+                    <div class="exp-skills-row">
+                        <span>Leadership</span><span>Community Building</span><span>Public
+                            Speaking</span><span>Networking</span><span>Tech Advocacy</span>
+                    </div>
+                </div>
+
+                <!-- ② Trillet AI Hackathon -->
+                <div class="exp-card reveal-up" style="--i:1" data-type="internship">
+                    <div class="exp-card-glow" style="--eg:#7c3aed"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#7c3aed">
+                                <i class="fas fa-microphone-alt"></i>
+                            </div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">AI Voice Agent Developer</h3>
+                            <div class="exp-company">
+                                <i class="fas fa-robot" style="color:#7c3aed;font-size:.75rem;"></i>
+                                Trillet AI · Hackathon
+                            </div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge" style="--bc:rgba(124,58,237,.15);--btc:#a78bfa">🏆
+                                    Hackathon</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> Mar 2025</span>
+                                <span class="exp-loc"><i class="fas fa-university"></i> FAST NUCES</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#7c3aed">AI/Voice</div>
+                    </div>
+                    <p class="exp-desc">Built <strong>EduVoice</strong> at the Trillet.ai Hackathon — an advanced AI
+                        voice agent functioning as a virtual teacher for <strong>Kindergarten to PhD level</strong>,
+                        adaptive to user's country and curriculum.</p>
+                    <ul class="exp-bullets">
+                        <li>Context-aware AI tutor adjusting content based on country (Pakistan syllabus vs. Western
+                            systems)</li>
+                        <li>Integrated <strong>20+ APIs</strong> — YouTube, GitHub, Google, research paper databases,
+                            Instagram, and more</li>
+                        <li>Behavioral intelligence module using database for emotionally responsive AI teacher</li>
+                        <li>Engineered multi-modal voice-first interface for personalized inclusive learning experiences
+                        </li>
+                        <li>Applied prompt engineering, database design, API integration, and voice AI UX under
+                            Trillet.ai platform</li>
+                    </ul>
+                    <div class="exp-skills-row">
+                        <span>Voice AI</span><span>Prompt Engineering</span><span>API
+                            Integration</span><span>AI/ML</span><span>Database Design</span>
+                    </div>
+                </div>
+
+                <!-- ③ CodeAlpha C++ Intern -->
+                <div class="exp-card reveal-up" style="--i:2" data-type="internship">
+                    <div class="exp-card-glow" style="--eg:#06b6d4"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#06b6d4">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">C++ Developer Intern</h3>
+                            <div class="exp-company">
+                                <i class="fas fa-shield-alt" style="color:#06b6d4;font-size:.75rem;"></i>
+                                CodeAlpha
+                            </div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge" style="--bc:rgba(6,182,212,.12);--btc:#06b6d4">✓
+                                    Completed</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> Mar – Apr 2025</span>
+                                <span class="exp-loc"><i class="fas fa-globe"></i> Remote</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#06b6d4">C++ Dev</div>
+                    </div>
+                    <p class="exp-desc">Hands-on internship focused on <strong>C++ development</strong>, emphasizing
+                        real-world problem-solving and object-oriented programming concepts.</p>
+                    <ul class="exp-bullets">
+                        <li>Built multiple C++ projects including a Quiz App with Timer and Leaderboard</li>
+                        <li>Strong command over C++ syntax, data structures, and file handling</li>
+                        <li>Practiced modular design, code reusability, and debugging techniques</li>
+                        <li>Collaborated with mentors and peers in a virtual team environment</li>
+                    </ul>
+                    <div class="exp-skills-row">
+                        <span>C++</span><span>OOP</span><span>Data Structures</span><span>File
+                            Handling</span><span>Project Management</span>
+                    </div>
+                </div>
+
+                <!-- ④ Codveda Web Dev -->
+                <div class="exp-card reveal-up" style="--i:3" data-type="internship">
+                    <div class="exp-card-glow" style="--eg:#10b981"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#10b981">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">Web Development Intern</h3>
+                            <div class="exp-company">
+                                <i class="fas fa-building" style="color:#10b981;font-size:.75rem;"></i>
+                                Codveda Technologies
+                            </div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge" style="--bc:rgba(16,185,129,.12);--btc:#10b981">✓
+                                    Completed</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> Apr – May 2025</span>
+                                <span class="exp-loc"><i class="fas fa-globe"></i> Remote</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#10b981">Web Dev</div>
+                    </div>
+                    <p class="exp-desc">Developed and maintained responsive websites using modern web technologies in a
+                        remote team environment.</p>
+                    <ul class="exp-bullets">
+                        <li>Developed and maintained responsive websites using HTML, CSS, and JavaScript</li>
+                        <li>Implemented UI components and improved website usability</li>
+                        <li>Fixed bugs and optimized code for better performance</li>
+                        <li>Collaborated remotely with team members following project guidelines</li>
+                    </ul>
+                    <div class="exp-skills-row">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX</span><span>Team
+                            Collab</span>
+                    </div>
+                </div>
+
+                <!-- ⑤ Encryptix Cloud -->
+                <div class="exp-card reveal-up" style="--i:4" data-type="internship">
+                    <div class="exp-card-glow" style="--eg:#ff9900"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#ff9900">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">Cloud Computing Intern</h3>
+                            <div class="exp-company">
+                                <i class="fas fa-lock" style="color:#ff9900;font-size:.75rem;"></i>
+                                Encryptix
+                            </div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge" style="--bc:rgba(255,153,0,.12);--btc:#ff9900">✓
+                                    Completed</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> May – Jun 2025</span>
+                                <span class="exp-loc"><i class="fas fa-globe"></i> Remote</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#ff9900">Cloud</div>
+                    </div>
+                    <p class="exp-desc">Hands-on exposure to cloud computing concepts and infrastructure services in a
+                        professional remote internship setting.</p>
+                    <ul class="exp-bullets">
+                        <li>Gained hands-on exposure to cloud computing concepts and services</li>
+                        <li>Assisted in basic cloud deployment and configuration tasks</li>
+                    </ul>
+                    <div class="exp-skills-row">
+                        <span>Cloud
+                            Computing</span><span>Deployment</span><span>Configuration</span><span>Infrastructure</span>
+                    </div>
+                </div>
+
+            </div><!-- /internships grid -->
+
+            <!-- ══════════════════════════════════
+             FREELANCE + COMMUNITY BLOCK
+        ══════════════════════════════════ -->
+            <div class="exp-block-label reveal" style="margin-top:56px;">
+                <i class="fas fa-rocket"></i>
+                <span>Freelance &amp; Community</span>
+                <div class="exp-block-line"></div>
+            </div>
+
+            <div class="exp-grid exp-grid-secondary" id="expGridSecondary">
+
+                <!-- ⑥ Youth Excellence Forum -->
+                <div class="exp-card reveal-up" style="--i:0" data-type="community">
+                    <div class="exp-card-glow" style="--eg:#10b981"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#10b981"><i class="fas fa-users"></i></div>
+                            <div class="exp-logo-ping" style="--pc:#10b981"></div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">Member</h3>
+                            <div class="exp-company"><i class="fas fa-star" style="color:#10b981;font-size:.75rem;"></i>
+                                Youth Excellence Forum</div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge exp-badge-green"><span class="badge-live-dot"
+                                        style="--bdc:#10b981"></span> Active · 7 months</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> Sep 2025 – Present</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#10b981">Community</div>
+                    </div>
+                    <p class="exp-desc">Active member contributing to youth development initiatives, leadership
+                        seminars, and positive community engagement.</p>
+                    <ul class="exp-bullets">
+                        <li>Participated in seminars focused on leadership, personal growth, and career development</li>
+                        <li>Collaborated with peers to promote positive social impact and community engagement</li>
+                    </ul>
+                    <div class="exp-skills-row"><span>Leadership</span><span>Team
+                            Management</span><span>Community</span></div>
+                </div>
+
+                <!-- ⑦ Fiverr -->
+                <div class="exp-card reveal-up" style="--i:1" data-type="freelance">
+                    <div class="exp-card-glow" style="--eg:#1dbf73"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#1dbf73"><i class="fas fa-briefcase"></i></div>
+                            <div class="exp-logo-ping" style="--pc:#1dbf73"></div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">Freelance Software Developer</h3>
+                            <div class="exp-company"><i class="fas fa-star" style="color:#1dbf73;font-size:.75rem;"></i>
+                                Fiverr</div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge exp-badge-green"><span class="badge-live-dot"
+                                        style="--bdc:#1dbf73"></span> Active · 2+ yrs</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> Jan 2024 – Present</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#1dbf73">Freelance</div>
+                    </div>
+                    <p class="exp-desc">Providing freelance software development services — web development, C++
+                        projects, and technical solutions for global clients.</p>
+                    <div class="exp-skills-row"><span>Web Dev</span><span>C++</span><span>WordPress</span><span>Client
+                            Work</span></div>
+                </div>
+
+                <!-- ⑧ Upwork -->
+                <div class="exp-card reveal-up" style="--i:2" data-type="freelance">
+                    <div class="exp-card-glow" style="--eg:#6fda44"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#6fda44"><i class="fas fa-laptop"></i></div>
+                            <div class="exp-logo-ping" style="--pc:#6fda44"></div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">Freelance Software Developer</h3>
+                            <div class="exp-company"><i class="fas fa-star" style="color:#6fda44;font-size:.75rem;"></i>
+                                Upwork</div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge exp-badge-green"><span class="badge-live-dot"
+                                        style="--bdc:#6fda44"></span> Active · 2+ yrs</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> Jan 2024 – Present</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#6fda44">Freelance</div>
+                    </div>
+                    <p class="exp-desc">Delivering software development projects for global clients across web and
+                        systems development on Upwork's platform.</p>
+                    <div class="exp-skills-row"><span>Web
+                            Dev</span><span>Python</span><span>JavaScript</span><span>Consulting</span></div>
+                </div>
+
+                <!-- ⑨ YouTube -->
+                <div class="exp-card reveal-up" style="--i:3" data-type="community">
+                    <div class="exp-card-glow" style="--eg:#ff0000"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#ff0000"><i class="fab fa-youtube"></i></div>
+                            <div class="exp-logo-ping" style="--pc:#ff0000"></div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">Founder &amp; Content Creator</h3>
+                            <div class="exp-company"><i class="fab fa-youtube"
+                                    style="color:#ff0000;font-size:.75rem;"></i> Code &amp; Creativity with Arif</div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge exp-badge-green"><span class="badge-live-dot"
+                                        style="--bdc:#ff0000"></span> Active · 2+ yrs</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> Jan 2024 – Present</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#ff0000">Content</div>
+                    </div>
+                    <p class="exp-desc">Founded and manage a YouTube channel sharing coding tutorials, tech insights,
+                        and development content for aspiring developers.</p>
+                    <div class="exp-skills-row"><span>Content Creation</span><span>Video
+                            Editing</span><span>Teaching</span><span>Tech</span></div>
+                </div>
+
+                <!-- ⑩ Blogger -->
+                <div class="exp-card reveal-up" style="--i:4" data-type="community">
+                    <div class="exp-card-glow" style="--eg:#ff5722"></div>
+                    <div class="exp-header">
+                        <div class="exp-logo-wrap">
+                            <div class="exp-logo" style="--lc:#ff5722"><i class="fas fa-pen-nib"></i></div>
+                            <div class="exp-logo-ping" style="--pc:#ff5722"></div>
+                        </div>
+                        <div class="exp-meta">
+                            <h3 class="exp-title">Blogger &amp; Technical Writer</h3>
+                            <div class="exp-company"><i class="fas fa-rss" style="color:#ff5722;font-size:.75rem;"></i>
+                                Blogger.com</div>
+                            <div class="exp-info-row">
+                                <span class="exp-badge exp-badge-green"><span class="badge-live-dot"
+                                        style="--bdc:#ff5722"></span> Active · 5+ yrs</span>
+                                <span class="exp-date"><i class="fas fa-calendar-alt"></i> Jan 2021 – Present</span>
+                            </div>
+                        </div>
+                        <div class="exp-type-tag" style="--tt:#ff5722">Writing</div>
+                    </div>
+                    <p class="exp-desc">Writing about technology, coding, cybersecurity, and student life since 2021 —
+                        sharing knowledge and experiences with the developer community.</p>
+                    <div class="exp-skills-row"><span>Blog Creation</span><span>Technical
+                            Writing</span><span>SEO</span><span>Research</span></div>
+                </div>
+
+            </div><!-- /secondary grid -->
+
+            <!-- ══════════════════════════════════
+             SUMMARY STATS BAR
+        ══════════════════════════════════ -->
+            <div class="exp-summary reveal">
+                <div class="exp-sum-item">
+                    <div class="exp-sum-num" data-target="5">0</div>
+                    <div class="exp-sum-lbl">Internships</div>
+                </div>
+                <div class="exp-sum-div"></div>
+                <div class="exp-sum-item">
+                    <div class="exp-sum-num" data-target="2">0</div>
+                    <div class="exp-sum-lbl">Freelance Platforms</div>
+                </div>
+                <div class="exp-sum-div"></div>
+                <div class="exp-sum-item">
+                    <div class="exp-sum-num" data-target="5">0</div>
+                    <div class="exp-sum-lbl">Companies / Orgs</div>
+                </div>
+                <div class="exp-sum-div"></div>
+                <div class="exp-sum-item">
+                    <div class="exp-sum-num" data-target="2">0</div>
+                    <div class="exp-sum-lbl">Years Experience</div>
+                </div>
+            </div>
+
+            <!-- LinkedIn CTA -->
+            <div class="exp-linkedin-cta reveal">
+                <i class="fab fa-linkedin"></i>
+                <span>See full work history with offer letters &amp; recommendations on</span>
+                <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank">LinkedIn Profile →</a>
+            </div>
+
         </div>
-        
-        <ul class="footer-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    </section>
 
-        <div class="copyright">
-            <p>© <span id="currentYear"></span> <span>Arif Ali</span> | Crafted with Passion</p>
+
+
+
+
+    <!-- ════════════ CERTIFICATES ════════════ -->
+    <section class="certs" id="certs">
+        <div class="container">
+            <div class="section-eyebrow center">Credentials</div>
+            <h2 class="section-h2 center reveal">Certifications &amp; <span class="grad-text">Courses</span></h2>
+            <div class="certs-grid">
+
+                <!-- cert images: cert-aws-genai.png, cert-google-data.png, cert-ai-security.png,
+                 cert-linux-sql.png, cert-aws-arch.png, cert-network-sec.png, cert-manage-risk.png,
+                 cert-cybersec-found.png, cert-dit.png, cert-freelance.png, cert-wordpress.png,
+                 cert-typing.png, cert-it.png -->
+
+                <div class="cert-card reveal-up" style="--i:0">
+                    <div class="cert-img-zone" style="--cert-color:#ff9900;">
+                        <img src="cert-aws-genai.png" alt="AWS Generative AI" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none">
+                            <i class="fab fa-aws" style="color:#ff9900;font-size:3rem;"></i>
+                        </div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(255,153,0,.12);color:#ff9900;"><i
+                                    class="fab fa-aws"></i></div>
+                            <span class="cert-org">Amazon Web Services</span>
+                        </div>
+                        <div class="cert-name">AWS Educate – Introduction to Generative AI</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> March 2026</div>
+                        <span class="cert-tag" style="--tag-c:#ff9900;">Artificial Intelligence</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:1">
+                    <div class="cert-img-zone" style="--cert-color:#4285f4;">
+                        <img src="cert-google-data.png" alt="Google Data" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fab fa-google"
+                                style="color:#4285f4;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(66,133,244,.12);color:#4285f4;"><i
+                                    class="fab fa-google"></i></div>
+                            <span class="cert-org">Google</span>
+                        </div>
+                        <div class="cert-name">Foundations: Data, Data, Everywhere</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> Feb 2026 &nbsp;·&nbsp; ID:
+                            4N3WH68P2O7F</div>
+                        <span class="cert-tag" style="--tag-c:#4285f4;">Data Analytics</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:2">
+                    <div class="cert-img-zone" style="--cert-color:#7c3aed;">
+                        <img src="cert-ai-security.png" alt="AI Security" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fas fa-robot"
+                                style="color:#7c3aed;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(124,58,237,.12);color:#7c3aed;"><i
+                                    class="fas fa-shield-alt"></i></div>
+                            <span class="cert-org">Securiti AI</span>
+                        </div>
+                        <div class="cert-name">AI Security &amp; Governance Certification</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> January 2026</div>
+                        <span class="cert-tag" style="--tag-c:#7c3aed;">AI Security</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:3">
+                    <div class="cert-img-zone" style="--cert-color:#fbbf24;">
+                        <img src="cert-linux-sql.png" alt="Linux SQL" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fab fa-linux"
+                                style="color:#fbbf24;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(66,133,244,.12);color:#4285f4;"><i
+                                    class="fab fa-google"></i></div>
+                            <span class="cert-org">Google</span>
+                        </div>
+                        <div class="cert-name">Tools of the Trade: Linux and SQL</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> Jan 2026 &nbsp;·&nbsp; ID:
+                            RB4C7Y20FP66</div>
+                        <span class="cert-tag" style="--tag-c:#fbbf24;">Linux · SQL</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:4">
+                    <div class="cert-img-zone" style="--cert-color:#ff9900;">
+                        <img src="cert-aws-arch.png" alt="AWS Arch" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fas fa-cloud"
+                                style="color:#ff9900;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(255,153,0,.12);color:#ff9900;"><i
+                                    class="fab fa-aws"></i></div>
+                            <span class="cert-org">Forage × AWS</span>
+                        </div>
+                        <div class="cert-name">AWS Solutions Architecture – Job Simulation</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> Aug 2025</div>
+                        <span class="cert-tag" style="--tag-c:#ff9900;">Cloud Architecture</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:5">
+                    <div class="cert-img-zone" style="--cert-color:#00d4ff;">
+                        <img src="cert-network-sec.png" alt="Network Security" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fas fa-network-wired"
+                                style="color:#00d4ff;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(66,133,244,.12);color:#4285f4;"><i
+                                    class="fab fa-google"></i></div>
+                            <span class="cert-org">Google</span>
+                        </div>
+                        <div class="cert-name">Connect &amp; Protect: Networks and Network Security</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> Jun 2025 &nbsp;·&nbsp; ID:
+                            DOZSNSC95TIY</div>
+                        <span class="cert-tag" style="--tag-c:#00d4ff;">Network Security</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:6">
+                    <div class="cert-img-zone" style="--cert-color:#10b981;">
+                        <img src="cert-manage-risk.png" alt="Manage Risk" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fas fa-shield-alt"
+                                style="color:#10b981;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(66,133,244,.12);color:#4285f4;"><i
+                                    class="fab fa-google"></i></div>
+                            <span class="cert-org">Google</span>
+                        </div>
+                        <div class="cert-name">Play It Safe: Manage Security Risks</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> Jun 2025 &nbsp;·&nbsp; ID:
+                            X3E0TULY39LU</div>
+                        <span class="cert-tag" style="--tag-c:#10b981;">Risk Management</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:7">
+                    <div class="cert-img-zone" style="--cert-color:#4285f4;">
+                        <img src="cert-cybersec-found.png" alt="Cybersec Found" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fas fa-lock"
+                                style="color:#4285f4;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(66,133,244,.12);color:#4285f4;"><i
+                                    class="fab fa-google"></i></div>
+                            <span class="cert-org">Google</span>
+                        </div>
+                        <div class="cert-name">Foundations of Cybersecurity</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> Jun 2025 &nbsp;·&nbsp; ID:
+                            L43KXE2H0HN7</div>
+                        <span class="cert-tag" style="--tag-c:#4285f4;">Cybersecurity</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:8">
+                    <div class="cert-img-zone" style="--cert-color:#ec4899;">
+                        <img src="cert-dit.png" alt="DIT" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fas fa-laptop-code"
+                                style="color:#ec4899;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(236,72,153,.12);color:#ec4899;"><i
+                                    class="fas fa-university"></i></div>
+                            <span class="cert-org">SBTE Sindh</span>
+                        </div>
+                        <div class="cert-name">Diploma in Information Technology (DIT)</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> May 2024</div>
+                        <span class="cert-tag" style="--tag-c:#ec4899;">IT · Java · AI</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:9">
+                    <div class="cert-img-zone" style="--cert-color:#fbbf24;">
+                        <img src="cert-freelance.png" alt="Freelancing" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fas fa-briefcase"
+                                style="color:#fbbf24;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(251,191,36,.12);color:#fbbf24;"><i
+                                    class="fas fa-globe"></i></div>
+                            <span class="cert-org">DigiSkills Pakistan</span>
+                        </div>
+                        <div class="cert-name">Freelancing</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> October 2023</div>
+                        <span class="cert-tag" style="--tag-c:#fbbf24;">Freelancing</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:10">
+                    <div class="cert-img-zone" style="--cert-color:#21759b;">
+                        <img src="cert-wordpress.png" alt="WordPress" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fab fa-wordpress"
+                                style="color:#21759b;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(33,117,155,.12);color:#21759b;"><i
+                                    class="fab fa-wordpress"></i></div>
+                            <span class="cert-org">DigiSkills PK</span>
+                        </div>
+                        <div class="cert-name">WordPress Development</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> July 2023</div>
+                        <span class="cert-tag" style="--tag-c:#21759b;">WordPress</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:11">
+                    <div class="cert-img-zone" style="--cert-color:#a78bfa;">
+                        <img src="cert-typing.png" alt="Typing" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fas fa-keyboard"
+                                style="color:#a78bfa;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(167,139,250,.12);color:#a78bfa;"><i
+                                    class="fas fa-keyboard"></i></div>
+                            <span class="cert-org">TypingTest.me</span>
+                        </div>
+                        <div class="cert-name">Typing Speed Certificate – 120 WPM</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> January 2026 &nbsp;·&nbsp; ID: 120
+                        </div>
+                        <span class="cert-tag" style="--tag-c:#a78bfa;">120 WPM</span>
+                    </div>
+                </div>
+
+                <div class="cert-card reveal-up" style="--i:12">
+                    <div class="cert-img-zone" style="--cert-color:#10b981;">
+                        <img src="cert-it.png" alt="IT Cert" class="cert-img"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="cert-img-fallback" style="display:none"><i class="fas fa-certificate"
+                                style="color:#10b981;font-size:3rem;"></i></div>
+                        <div class="cert-shine"></div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-issuer-row">
+                            <div class="cert-logo-icon" style="background:rgba(16,185,129,.12);color:#10b981;"><i
+                                    class="fas fa-university"></i></div>
+                            <span class="cert-org">SBTE Sindh</span>
+                        </div>
+                        <div class="cert-name">Certificate of Information Technology</div>
+                        <div class="cert-meta"><i class="fas fa-calendar-check"></i> January 2021</div>
+                        <span class="cert-tag" style="--tag-c:#10b981;">MS Office · CorelDRAW</span>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ PROJECTS ════════════ -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-eyebrow center">Portfolio</div>
+            <h2 class="section-h2 center reveal">My <span class="grad-text">Projects</span></h2>
+
+            <!-- Project images naming: eid1.png eid2.png / vuln1.png vuln2.png / 
+             sec1.png sec2.png / terra1.png terra2.png / calc1.png calc2.png /
+             soc1.png soc2.png / doc1.png / tetris1.png tetris2.png /
+             doodle1.png doodle2.png / ark1.png ark2.png /
+             ip1.png / smart1.png / contact1.png / cpp1.png -->
+
+            <div class="projects-grid">
+
+                <div class="proj-card reveal-up" style="--i:0">
+                    <div class="proj-gallery">
+                        <img src="eid1.png" alt="Eid Card 1" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%237c3aed\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>🌙</text></svg>'">
+                        <img src="eid2.png" alt="Eid Card 2" class="proj-img" onerror="this.remove()">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span
+                                class="ptag">JS</span></div>
+                        <h3>Eid Mubarak Card Generator 🌙</h3>
+                        <p>Personalized Eid card generator — type your wish live, then download as PNG or share via
+                            link. Pure HTML, no backend needed.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/eid-mubarak-wishes" target="_blank" class="plink"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="plink plink-main"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:1">
+                    <div class="proj-gallery">
+                        <img src="vuln1.png" alt="AI Vuln 1" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%23ef4444\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>🔐</text></svg>'">
+                        <img src="vuln2.png" alt="AI Vuln 2" class="proj-img" onerror="this.remove()">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag ptag-red">Groq
+                                LLaMA-3</span><span class="ptag ptag-red">AI</span></div>
+                        <h3>AI Vulnerability Scanner 🔐</h3>
+                        <p>AI-powered scanner using Groq LLaMA-3 — detects open ports, HTTP issues, explains
+                            vulnerabilities with attack scenarios and fixes.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/ai-vuln-scanner" target="_blank" class="plink"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:2">
+                    <div class="proj-gallery">
+                        <img src="sec1.png" alt="ArifSec 1" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%2310b981\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>🛡️</text></svg>'">
+                        <img src="sec2.png" alt="ArifSec 2" class="proj-img" onerror="this.remove()">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag ptag-green">Python</span><span
+                                class="ptag ptag-green">OSINT</span><span class="ptag">MIT</span></div>
+                        <h3>ArifSec-Pro – Security Toolkit</h3>
+                        <p>All-in-one OSINT &amp; security toolkit for Linux — IP geolocation, email breach checks, port
+                            scanning, DNS leak detection, and social profiling.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/ArifSec-Pro" target="_blank" class="plink"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:3">
+                    <div class="proj-gallery">
+                        <img src="terra1.png" alt="TerraMetrics 1" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%2300d4ff\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>🌍</text></svg>'">
+                        <img src="terra2.png" alt="TerraMetrics 2" class="proj-img" onerror="this.remove()">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">Chart.js</span><span
+                                class="ptag ptag-red">AI</span><span class="ptag">MIT</span></div>
+                        <h3>TerraMetrics Nexus v5.1</h3>
+                        <p>AI-powered global intelligence dashboard simulating GDP, CO₂, population trends — with radar
+                            comparisons, strategic AI insights and PDF export.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/TerraMetrics-Nexus" target="_blank" class="plink"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:4">
+                    <div class="proj-gallery">
+                        <img src="calc1.png" alt="FAST Calc 1" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%2360a5fa\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>🎓</text></svg>'">
+                        <img src="calc2.png" alt="FAST Calc 2" class="proj-img" onerror="this.remove()">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag">JS</span><span class="ptag">Tailwind</span><span
+                                class="ptag">HTML</span></div>
+                        <h3>FAST NUCES Aggregate Calculator 🔢</h3>
+                        <p>Helps students calculate FAST NUCES admission aggregate — supports NU Test, NAT, negative
+                            marking, campus comparison, and PDF export.</p>
+                        <div class="proj-links">
+                            <a href="https://arifali8866.github.io/fast-nu-merit-calculator/" target="_blank"
+                                class="plink plink-main"><i class="fas fa-external-link-alt"></i> Live</a>
+                            <a href="https://github.com/ArifAli8866/fast-nu-merit-calculator" target="_blank"
+                                class="plink"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:5">
+                    <div class="proj-gallery">
+                        <img src="soc1.png" alt="SOC 1" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%23fb923c\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>🖥️</text></svg>'">
+                        <img src="soc2.png" alt="SOC 2" class="proj-img" onerror="this.remove()">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag ptag-orange">Shell</span><span
+                                class="ptag ptag-orange">Linux</span><span class="ptag">MIT</span></div>
+                        <h3>Linux Cybersecurity SOC Monitor</h3>
+                        <p>Professional menu-driven Linux SOC tool monitoring system health, threats, security audits
+                            with configurable email alerts and CPU/network tracking.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/linux-soc-monitor" target="_blank" class="plink"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:6">
+                    <div class="proj-gallery">
+                        <img src="tetris1.png" alt="Tetris 1" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%2322d3ee\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>🟦</text></svg>'">
+                        <img src="tetris2.png" alt="Tetris 2" class="proj-img" onerror="this.remove()">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag ptag-cyan">C++</span><span
+                                class="ptag ptag-cyan">SFML</span><span class="ptag">Game</span></div>
+                        <h3>Zenith Tetris</h3>
+                        <p>High-performance Tetris in C++ &amp; SFML featuring modern UI, smooth animations, ghost-piece
+                            system, and full gameplay mechanics.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/Zenith-Tetris-C-SFML-Graphics-Engine"
+                                target="_blank" class="plink"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:7">
+                    <div class="proj-gallery">
+                        <img src="doodle1.png" alt="Doodle 1" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%234ade80\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>🎮</text></svg>'">
+                        <img src="doodle2.png" alt="Doodle 2" class="proj-img" onerror="this.remove()">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag ptag-cyan">C++</span><span
+                                class="ptag ptag-cyan">SFML</span><span class="ptag">Game</span></div>
+                        <h3>Doodle Jump SFML</h3>
+                        <p>Modern platformer recreation with smooth physics, vibrant pixel art, and addictive gameplay
+                            with power-ups and procedural levels.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/Doodle-Jump-SFML-Classic-Platformer-Reborn-"
+                                target="_blank" class="plink"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:8">
+                    <div class="proj-gallery">
+                        <img src="ark1.png" alt="Arkanoid 1" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%23a78bfa\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>⚡</text></svg>'">
+                        <img src="ark2.png" alt="Arkanoid 2" class="proj-img" onerror="this.remove()">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag ptag-cyan">C++</span><span
+                                class="ptag ptag-cyan">SFML</span><span class="ptag">Game</span></div>
+                        <h3>Arkanoid – Ultimate Brick Breaker</h3>
+                        <p>Modern arcade brick-breaker with stunning visual effects, responsive physics, multi-ball
+                            challenges, power-ups, and boss levels.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/-Arkanoid-SFML-The-Ultimate-Brick-Breaker"
+                                target="_blank" class="plink"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:9">
+                    <div class="proj-gallery">
+                        <img src="ip1.png" alt="IP Tracker" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%2360a5fa\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>📍</text></svg>'">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag ptag-green">Python</span><span
+                                class="ptag ptag-green">Kali</span><span class="ptag">MIT</span></div>
+                        <h3>LocateOwn – IP Tracker</h3>
+                        <p>Terminal IP geolocation tool for Kali Linux — fetches location, ISP, city, region via
+                            ipinfo.io API with a sleek hacker-aesthetic UI.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/LocateOwn-IP-Tracker" target="_blank"
+                                class="plink"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:10">
+                    <div class="proj-gallery">
+                        <img src="doc1.png" alt="DoC Tool" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%23f87171\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>📡</text></svg>'">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag ptag-green">Python</span><span
+                                class="ptag ptag-red">Security</span><span class="ptag">MIT</span></div>
+                        <h3>DoC Attack Toolkit <small>(Educational)</small></h3>
+                        <p>Denial of Connectivity toolkit with Wi-Fi deauth, Bluetooth flood, and TCP SYN flood modules.
+                            For ethical hacking education only.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/doc-attack-tool" target="_blank" class="plink"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:11">
+                    <div class="proj-gallery">
+                        <img src="smart1.png" alt="SmartCalc" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%2334d399\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>🧮</text></svg>'">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span
+                                class="ptag">JS</span></div>
+                        <h3>SmartCalc – Web Calculator</h3>
+                        <p>Simple, interactive calculator with clean UI for all basic math operations. Hosted live on
+                            Netlify.</p>
+                        <div class="proj-links">
+                            <a href="https://arifali-calculator.netlify.app" target="_blank" class="plink plink-main"><i
+                                    class="fas fa-external-link-alt"></i> Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:12">
+                    <div class="proj-gallery">
+                        <img src="contact1.png" alt="Contact Mgmt" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%2394a3b8\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>📒</text></svg>'">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag ptag-cyan">C++</span><span class="ptag">OOP</span><span
+                                class="ptag">File I/O</span></div>
+                        <h3>Contact Management System</h3>
+                        <p>Console OOP app to add, search, edit, delete contacts with file handling — a foundation for
+                            advanced data management projects.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866" target="_blank" class="plink"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proj-card reveal-up" style="--i:13">
+                    <div class="proj-gallery">
+                        <img src="cpp1.png" alt="C++ Tool" class="proj-img active"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\'><rect fill=\'%23111827\' width=\'400\' height=\'220\'/><text x=\'50%25\' y=\'50%25\' fill=\'%2360a5fa\' font-size=\'40\' text-anchor=\'middle\' dy=\'.3em\'>⚙️</text></svg>'">
+                        <div class="proj-dots"></div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span class="ptag ptag-cyan">C++</span><span class="ptag">CLI</span>
+                        </div>
+                        <h3>C++ Tool Suite</h3>
+                        <p>Collection of C++ command-line utilities and tools for various programming tasks. Open source
+                            and actively maintained.</p>
+                        <div class="proj-links">
+                            <a href="https://github.com/ArifAli8866/cpp-tool" target="_blank" class="plink"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ SKILLS ════════════ -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-eyebrow center">Expertise</div>
+            <h2 class="section-h2 center reveal">Skills &amp; <span class="grad-text">Tech Stack</span></h2>
+
+            <div class="skills-universe">
+                <!-- Left: Radar / Hexagon visual -->
+                <div class="skills-visual reveal-left">
+                    <div class="hex-grid">
+                        <div class="hex-cell hex-active" style="--hc:#00d4ff" data-label="C++">
+                            <div class="hex-inner"><i class="fas fa-code"></i><span>C++</span></div>
+                        </div>
+                        <div class="hex-cell hex-active" style="--hc:#7c3aed" data-label="Python">
+                            <div class="hex-inner"><i class="fab fa-python"></i><span>Python</span></div>
+                        </div>
+                        <div class="hex-cell hex-active" style="--hc:#ec4899" data-label="JS">
+                            <div class="hex-inner"><i class="fab fa-js"></i><span>JS</span></div>
+                        </div>
+                        <div class="hex-cell hex-active" style="--hc:#10b981" data-label="Linux">
+                            <div class="hex-inner"><i class="fab fa-linux"></i><span>Linux</span></div>
+                        </div>
+                        <div class="hex-cell hex-active" style="--hc:#fbbf24" data-label="AWS">
+                            <div class="hex-inner"><i class="fab fa-aws"></i><span>AWS</span></div>
+                        </div>
+                        <div class="hex-cell" style="--hc:#21759b" data-label="WordPress">
+                            <div class="hex-inner"><i class="fab fa-wordpress"></i><span>WP</span></div>
+                        </div>
+                        <div class="hex-cell hex-active" style="--hc:#ff9900" data-label="Security">
+                            <div class="hex-inner"><i class="fas fa-shield-alt"></i><span>Sec</span></div>
+                        </div>
+                        <div class="hex-cell" style="--hc:#00d4ff" data-label="Firebase">
+                            <div class="hex-inner"><i class="fas fa-fire"></i><span>Firebase</span></div>
+                        </div>
+                        <div class="hex-cell" style="--hc:#7c3aed" data-label="SQL">
+                            <div class="hex-inner"><i class="fas fa-database"></i><span>SQL</span></div>
+                        </div>
+                        <div class="hex-cell" style="--hc:#ec4899" data-label="Photoshop">
+                            <div class="hex-inner"><i class="fas fa-paint-brush"></i><span>PS</span></div>
+                        </div>
+                        <div class="hex-cell" style="--hc:#10b981" data-label="Git">
+                            <div class="hex-inner"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                        </div>
+                        <div class="hex-cell" style="--hc:#fbbf24" data-label="SFML">
+                            <div class="hex-inner"><i class="fas fa-gamepad"></i><span>SFML</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: skill bars -->
+                <div class="skills-bars-col reveal-right">
+                    <div class="sbar-group">
+                        <h4 class="sbar-group-title"><i class="fas fa-code"></i> Programming</h4>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>C++</span><span class="sbar-pct" data-val="95">0%</span></div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="95" style="--fc:#00d4ff"></div>
+                            </div>
+                        </div>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>Python</span><span class="sbar-pct" data-val="85">0%</span>
+                            </div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="85" style="--fc:#7c3aed"></div>
+                            </div>
+                        </div>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>JavaScript</span><span class="sbar-pct" data-val="88">0%</span>
+                            </div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="88" style="--fc:#ec4899"></div>
+                            </div>
+                        </div>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>Java</span><span class="sbar-pct" data-val="70">0%</span></div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="70" style="--fc:#fbbf24"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sbar-group">
+                        <h4 class="sbar-group-title"><i class="fas fa-globe"></i> Web &amp; Tools</h4>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>HTML / CSS</span><span class="sbar-pct" data-val="92">0%</span>
+                            </div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="92" style="--fc:#00d4ff"></div>
+                            </div>
+                        </div>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>WordPress</span><span class="sbar-pct" data-val="88">0%</span>
+                            </div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="88" style="--fc:#21759b"></div>
+                            </div>
+                        </div>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>Firebase</span><span class="sbar-pct" data-val="72">0%</span>
+                            </div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="72" style="--fc:#ff9900"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sbar-group">
+                        <h4 class="sbar-group-title"><i class="fas fa-shield-alt"></i> Cybersecurity</h4>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>Network Security</span><span class="sbar-pct"
+                                    data-val="78">0%</span></div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="78" style="--fc:#10b981"></div>
+                            </div>
+                        </div>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>Ethical Hacking</span><span class="sbar-pct"
+                                    data-val="72">0%</span></div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="72" style="--fc:#ec4899"></div>
+                            </div>
+                        </div>
+                        <div class="sbar-item">
+                            <div class="sbar-top"><span>Linux / Kali</span><span class="sbar-pct"
+                                    data-val="82">0%</span></div>
+                            <div class="sbar-track">
+                                <div class="sbar-fill" data-w="82" style="--fc:#7c3aed"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ TESTIMONIALS ════════════ -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-eyebrow center">Kind Words</div>
+            <h2 class="section-h2 center reveal">What People <span class="grad-text">Say</span></h2>
+            <div class="testi-grid">
+                <div class="testi-card reveal-up" style="--i:0">
+                    <div class="testi-quote-mark">"</div>
+                    <div class="testi-avatar-wrap">
+                        <img src="projectmentor.png" alt="Mentor"
+                            onerror="this.parentElement.innerHTML='<div class=tav-fallback><i class=\'fas fa-chalkboard-teacher\'></i></div>'">
+                    </div>
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"Arif is a hardworking student with strong problem-solving skills and a great
+                        passion for learning new technologies. Always delivers quality work ahead of deadlines."</p>
+                    <div class="testi-author">
+                        <strong>Project Mentor</strong>
+                        <span>FAST NUCES Faculty</span>
+                    </div>
+                </div>
+                <div class="testi-card testi-featured reveal-up" style="--i:1">
+                    <div class="testi-quote-mark">"</div>
+                    <div class="testi-avatar-wrap">
+                        <img src="unipeer.png" alt="Peer"
+                            onerror="this.parentElement.innerHTML='<div class=tav-fallback><i class=\'fas fa-user-graduate\'></i></div>'">
+                    </div>
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"Working with Arif on programming projects has always been a great experience.
+                        He is focused, dedicated to quality code, and brings innovative ideas to every project."</p>
+                    <div class="testi-author">
+                        <strong>University Peer</strong>
+                        <span>CS Classmate, FAST NUCES</span>
+                    </div>
+                </div>
+                <div class="testi-card reveal-up" style="--i:2">
+                    <div class="testi-quote-mark">"</div>
+                    <div class="testi-avatar-wrap">
+                        <img src="sharda.jpg" alt="Instructor"
+                            onerror="this.parentElement.innerHTML='<div class=tav-fallback><i class=\'fas fa-user-tie\'></i></div>'">
+                    </div>
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"Arif shows excellent commitment to his studies and demonstrates strong
+                        analytical thinking in technical subjects. One of the most self-driven learners I've
+                        encountered."</p>
+                    <div class="testi-author">
+                        <strong>Course Instructor</strong>
+                        <span>Technical Educator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="cv-preview" id="cv">
+        <div class="container">
+            <div class="section-eyebrow center">My Resume</div>
+            <h2 class="section-h2 center reveal">Curriculum <span class="grad-text">Vitae</span></h2>
+
+            <div class="cvp-wrap reveal">
+                <div class="cvp-left">
+                    <div class="cvp-card">
+                        <!-- CV placeholder visual — replace with actual embed if needed -->
+                        <div class="cvp-mockup">
+                            <div class="cvp-header-bar">
+                                <div class="cvp-avatar-sm"></div>
+                                <div class="cvp-lines">
+                                    <div class="cvp-line w80 bright"></div>
+                                    <div class="cvp-line w50"></div>
+                                </div>
+                            </div>
+                            <div class="cvp-section-title"></div>
+                            <div class="cvp-line w90"></div>
+                            <div class="cvp-line w70"></div>
+                            <div class="cvp-line w80"></div>
+                            <div class="cvp-section-title mt"></div>
+                            <div class="cvp-skill-row">
+                                <div class="cvp-skill-bar" style="width:95%"></div>
+                            </div>
+                            <div class="cvp-skill-row">
+                                <div class="cvp-skill-bar" style="width:85%;--sb:#7c3aed"></div>
+                            </div>
+                            <div class="cvp-skill-row">
+                                <div class="cvp-skill-bar" style="width:88%;--sb:#ec4899"></div>
+                            </div>
+                            <div class="cvp-section-title mt"></div>
+                            <div class="cvp-line w100"></div>
+                            <div class="cvp-line w75"></div>
+                            <div class="cvp-line w90"></div>
+                            <div class="cvp-scan-line"></div>
+                        </div>
+                        <div class="cvp-overlay">
+                            <i class="fas fa-file-pdf"></i>
+                            <p>Arif Ali — Resume</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cvp-right">
+                    <h3>Ready to hire?</h3>
+                    <p>My CV includes full details of my education, projects, certifications, and skills — formatted
+                        professionally for tech recruiters.</p>
+                    <ul class="cvp-highlights">
+                        <li><i class="fas fa-check-circle"></i> FAST NUCES BCS Student (2024–2028)</li>
+                        <li><i class="fas fa-check-circle"></i> 13+ International Certifications</li>
+                        <li><i class="fas fa-check-circle"></i> 15+ Real-World Projects</li>
+                        <li><i class="fas fa-check-circle"></i> C++, Python, JS, Cybersecurity</li>
+                        <li><i class="fas fa-check-circle"></i> 120 WPM Typing Speed</li>
+                        <li><i class="fas fa-check-circle"></i> Open to Internships Immediately</li>
+                    </ul>
+                    <div class="cvp-actions">
+                        <a href="Arif-Ali-CV.pdf" download class="btn-glow">
+                            <i class="fas fa-download"></i> Download CV (PDF)
+                        </a>
+                        <a href="Arif-Ali-CV.pdf" target="_blank" class="btn-ghost">
+                            <i class="fas fa-eye"></i> Preview CV
+                        </a>
+                    </div>
+                    <div class="cvp-updated">
+                        <i class="fas fa-clock"></i> Last updated: <strong>March 2026</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- ════════════ CONTACT ════════════ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-eyebrow center">Let's Talk</div>
+            <h2 class="section-h2 center reveal">Get In <span class="grad-text">Touch</span></h2>
+            <div class="contact-grid">
+                <div class="contact-left reveal-left">
+                    <h3>Let's Build Something <span class="grad-text">Amazing</span></h3>
+                    <p>Whether you have a project in mind, want to collaborate, or just want to connect — I'm always
+                        open to interesting conversations.</p>
+                    <div class="cinfo-item">
+                        <div class="cinfo-icon"><i class="fab fa-github"></i></div>
+                        <div><strong>GitHub</strong><span>github.com/ArifAli8866</span></div>
+                    </div>
+
+                    <div class="live-clock-wrap" id="liveClock">
+                        <div class="lc-inner">
+                            <div class="lc-left">
+                                <div class="lc-label"><i class="fas fa-clock"></i> Pakistan Time (PKT)</div>
+                                <div class="lc-time" id="lcTime">--:--:--</div>
+                                <div class="lc-date" id="lcDate">Loading...</div>
+                            </div>
+                            <div class="lc-right">
+                                <div class="lc-avail" id="lcAvail">
+                                    <span class="lc-dot"></span>
+                                    <span id="lcAvailText">Checking availability...</span>
+                                </div>
+                                <div class="lc-tz">UTC+5:00</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="cinfo-item">
+                        <div class="cinfo-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div><strong>LinkedIn</strong><span>linkedin.com/in/arif-ali-23a38032a</span></div>
+                    </div>
+                    <div class="cinfo-item">
+                        <div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><strong>Location</strong><span>Pakistan 🇵🇰</span></div>
+                    </div>
+                </div>
+                <div class="contact-form-wrap reveal-right">
+                    <div class="cf-row">
+                        <div class="cf-field">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your Name">
+                        </div>
+                        <div class="cf-field">
+                            <label>Email</label>
+                            <input type="email" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    <div class="cf-field">
+                        <label>Subject</label>
+                        <input type="text" placeholder="How can I help?">
+                    </div>
+                    <div class="cf-field">
+                        <label>Message</label>
+                        <textarea placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button class="btn-glow" id="sendBtn" style="width:100%;justify-content:center;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     ARIF ALI PORTFOLIO — NEW ADDITIONS
+     Paste these sections into index.html BEFORE the footer.
+     Also add the CSS to style.css and JS to main.js (see below)
+     ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- ════════════ 1. JOURNEY / TIMELINE ════════════ -->
+    <section class="journey" id="journey">
+        <div class="container">
+            <div class="section-eyebrow center">My Story</div>
+            <h2 class="section-h2 center reveal">Personal <span class="grad-text">Journey</span></h2>
+            <p class="journey-subtitle reveal">From a small town in Sindh to cracking one of Pakistan's top CS
+                universities — here's how it happened.</p>
+
+            <div class="journey-track">
+                <!-- Left line -->
+                <div class="journey-spine"></div>
+
+                <div class="journey-item ji-left reveal-left">
+                    <div class="ji-dot" style="--jc:#fbbf24"><i class="fas fa-child"></i></div>
+                    <div class="ji-card">
+                        <div class="ji-year">2021</div>
+                        <div class="ji-emoji">🖥️</div>
+                        <h3>First Steps in IT</h3>
+                        <p>Completed <strong>Certificate of IT at SBTE Sindh</strong> — first formal exposure to
+                            computers, MS Office, CorelDRAW, and the world of technology. The spark that started
+                            everything.</p>
+                        <div class="ji-tags"><span>MS Office</span><span>CorelDRAW</span><span>Basics</span></div>
+                    </div>
+                </div>
+
+                <div class="journey-item ji-right reveal-right">
+                    <div class="ji-dot" style="--jc:#10b981"><i class="fas fa-book-open"></i></div>
+                    <div class="ji-card">
+                        <div class="ji-year">2022</div>
+                        <div class="ji-emoji">📚</div>
+                        <h3>Matric — Science</h3>
+                        <p>Passed Matriculation from <strong>Govt. High School Umer Daho Sarhad</strong> with Science
+                            stream. Started self-studying programming on the side — YouTube tutorials, online courses,
+                            curiosity-driven learning.</p>
+                        <div class="ji-tags"><span>Science</span><span>Self-Learning</span></div>
+                    </div>
+                </div>
+
+                <div class="journey-item ji-left reveal-left">
+                    <div class="ji-dot" style="--jc:#7c3aed"><i class="fas fa-laptop-code"></i></div>
+                    <div class="ji-card">
+                        <div class="ji-year">2023</div>
+                        <div class="ji-emoji">💻</div>
+                        <h3>WordPress & Freelancing — DigiSkills</h3>
+                        <p>Completed <strong>WordPress Development</strong> and <strong>Freelancing</strong> courses
+                            through DigiSkills Pakistan. Built first client websites. Started understanding the value of
+                            skills in the digital economy.</p>
+                        <div class="ji-tags"><span>WordPress</span><span>Freelancing</span><span>DigiSkills</span></div>
+                    </div>
+                </div>
+
+                <div class="journey-item ji-right reveal-right">
+                    <div class="ji-dot" style="--jc:#ec4899"><i class="fas fa-certificate"></i></div>
+                    <div class="ji-card">
+                        <div class="ji-year">2024 · Early</div>
+                        <div class="ji-emoji">🎓</div>
+                        <h3>Intermediate + DIT Diploma</h3>
+                        <p>Completed <strong>Intermediate Engineering</strong> from GHSS Umer Daho Sarhad and earned a
+                            <strong>Diploma in IT from SBTE</strong> simultaneously. Applied to FAST NUCES — the dream
+                            university.
+                        </p>
+                        <div class="ji-tags"><span>Engineering</span><span>DIT</span><span>SBTE</span></div>
+                    </div>
+                </div>
+
+                <div class="journey-item ji-left reveal-left">
+                    <div class="ji-dot" style="--jc:#00d4ff; box-shadow:0 0 30px #00d4ff;"><i
+                            class="fas fa-university"></i></div>
+                    <div class="ji-card ji-card-featured">
+                        <div class="ji-featured-badge">🏆 Milestone</div>
+                        <div class="ji-year">2024 · August</div>
+                        <div class="ji-emoji">🚀</div>
+                        <h3>Cracked FAST NUCES — BCS!</h3>
+                        <p>Got admitted to <strong>National University of Computer &amp; Emerging Sciences
+                                (FAST)</strong> — one of Pakistan's most competitive CS universities. A dream fulfilled
+                            through years of self-discipline and hard work.</p>
+                        <div class="ji-tags"><span>FAST NUCES</span><span>BCS</span><span>Dream Achieved</span></div>
+                    </div>
+                </div>
+
+                <div class="journey-item ji-right reveal-right">
+                    <div class="ji-dot" style="--jc:#10b981"><i class="fas fa-shield-alt"></i></div>
+                    <div class="ji-card">
+                        <div class="ji-year">2025</div>
+                        <div class="ji-emoji">🔐</div>
+                        <h3>Google Cybersecurity Path</h3>
+                        <p>Completed <strong>4 Google Cybersecurity courses</strong>, built the Linux SOC Monitor,
+                            ArifSec-Pro OSINT toolkit, and AI Vulnerability Scanner. Emerging as a hands-on security
+                            practitioner alongside university studies.</p>
+                        <div class="ji-tags"><span>Google Certs</span><span>Ethical Hacking</span><span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-item ji-left reveal-left">
+                    <div class="ji-dot" style="--jc:#7c3aed"><i class="fas fa-robot"></i></div>
+                    <div class="ji-card">
+                        <div class="ji-year">2026</div>
+                        <div class="ji-emoji">🤖</div>
+                        <h3>AI Integration & Data Analytics</h3>
+                        <p>Earned <strong>AWS Generative AI</strong> badge, <strong>Google Data Analytics</strong> cert,
+                            and <strong>AI Security</strong> certification. Built TerraMetrics Nexus — an AI-powered
+                            global intelligence dashboard. 3 Semesters at FAST completed.</p>
+                        <div class="ji-tags"><span>AWS AI</span><span>Data Analytics</span><span>AI Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-item ji-right reveal-right">
+                    <div class="ji-dot" style="--jc:#ec4899; animation:pulse-future 2s ease-in-out infinite;"><i
+                            class="fas fa-star"></i></div>
+                    <div class="ji-card ji-card-future">
+                        <div class="ji-future-badge">🎯 Goal</div>
+                        <div class="ji-year">2028</div>
+                        <div class="ji-emoji">💼</div>
+                        <h3>Software Engineer at Top Tech</h3>
+                        <p>Graduate from FAST NUCES with BCS. Land a role at a top-tier tech company as a
+                            <strong>Software Engineer or Security Researcher</strong>. Contribute to open source. Keep
+                            building, keep learning.
+                        </p>
+                        <div class="ji-tags"><span>Dream Job</span><span>FAST Graduate</span><span>Global Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ 2. GITHUB STATS ════════════ -->
+    <section class="github-stats" id="github">
+        <div class="container">
+            <div class="section-eyebrow center">Open Source</div>
+            <h2 class="section-h2 center reveal">GitHub <span class="grad-text">Activity</span></h2>
+
+            <div class="gh-profile-card reveal">
+                <div class="gh-left">
+                    <div class="gh-avatar">
+                        <img src="https://avatars.githubusercontent.com/ArifAli8866" alt="GitHub Avatar"
+                            onerror="this.src='a.png'">
+                        <div class="gh-avatar-ring"></div>
+                    </div>
+                    <div class="gh-identity">
+                        <h3>ArifAli8866</h3>
+                        <p>CS Student · Web Dev · Cybersecurity</p>
+                        <a href="https://github.com/ArifAli8866" target="_blank" class="gh-link-btn">
+                            <i class="fab fa-github"></i> View Profile
+                        </a>
+                    </div>
+                </div>
+                <div class="gh-right">
+                    <div class="gh-stat-box" id="ghRepos">
+                        <i class="fas fa-folder-open"></i>
+                        <div class="gh-stat-num" id="repoCount">15+</div>
+                        <div class="gh-stat-lbl">Public Repos</div>
+                    </div>
+                    <div class="gh-stat-box" id="ghStars">
+                        <i class="fas fa-star"></i>
+                        <div class="gh-stat-num" id="starCount">–</div>
+                        <div class="gh-stat-lbl">Total Stars</div>
+                    </div>
+                    <div class="gh-stat-box" id="ghFollowers">
+                        <i class="fas fa-users"></i>
+                        <div class="gh-stat-num" id="followerCount">–</div>
+                        <div class="gh-stat-lbl">Followers</div>
+                    </div>
+                    <div class="gh-stat-box" id="ghCommits">
+                        <i class="fas fa-code-branch"></i>
+                        <div class="gh-stat-num">Active</div>
+                        <div class="gh-stat-lbl">Contributor</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub Stats Images (auto-served by github-readme-stats) -->
+            <div class="gh-cards-grid reveal">
+                <div class="gh-img-card">
+                    <img src="https://github-readme-stats.vercel.app/api?username=ArifAli8866&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f1929&title_color=00d4ff&text_color=a8bbd4&icon_color=7c3aed&count_private=true"
+                        alt="GitHub Stats"
+                        onerror="this.parentElement.innerHTML='<div class=gh-img-fallback><i class=\'fab fa-github\'></i><p>GitHub Stats</p><small>Connect to internet to load live stats</small></div>'">
+                </div>
+                <div class="gh-img-card">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArifAli8866&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f1929&title_color=00d4ff&text_color=a8bbd4&langs_count=8"
+                        alt="Top Languages"
+                        onerror="this.parentElement.innerHTML='<div class=gh-img-fallback><i class=\'fas fa-code\'></i><p>Top Languages</p></div>'">
+                </div>
+            </div>
+
+            <!-- Contribution streak -->
+            <div class="gh-streak-wrap reveal">
+                <img src="https://github-readme-streak-stats.herokuapp.com?user=ArifAli8866&theme=tokyonight&hide_border=true&background=0f1929&ring=00d4ff&fire=ec4899&currStreakLabel=00d4ff&sideLabels=a8bbd4&dates=5a7a9a"
+                    alt="GitHub Streak"
+                    onerror="this.parentElement.innerHTML='<div class=gh-img-fallback><i class=\'fas fa-fire\'></i><p>Contribution Streak</p><small>Connect to internet to load live stats</small></div>'">
+            </div>
+
+            <!-- Top repos manually listed -->
+            <div class="gh-repos-title reveal"><i class="fas fa-fire"></i> Featured Repositories</div>
+            <div class="gh-repos-grid">
+                <a href="https://github.com/ArifAli8866/TerraMetrics-Nexus" target="_blank"
+                    class="gh-repo-card reveal-up" style="--i:0">
+                    <div class="gh-repo-top">
+                        <i class="fas fa-globe gh-repo-icon" style="color:#00d4ff"></i>
+                        <span class="gh-repo-lang" style="--lc:#f1e05a">HTML</span>
+                    </div>
+                    <div class="gh-repo-name">TerraMetrics-Nexus</div>
+                    <div class="gh-repo-desc">AI-powered global intelligence dashboard with data visualization and
+                        strategic insights.</div>
+                    <div class="gh-repo-meta"><i class="fas fa-star"></i> MIT License</div>
+                </a>
+                <a href="https://github.com/ArifAli8866/ArifSec-Pro" target="_blank" class="gh-repo-card reveal-up"
+                    style="--i:1">
+                    <div class="gh-repo-top">
+                        <i class="fas fa-shield-alt gh-repo-icon" style="color:#10b981"></i>
+                        <span class="gh-repo-lang" style="--lc:#3572A5">Python</span>
+                    </div>
+                    <div class="gh-repo-name">ArifSec-Pro</div>
+                    <div class="gh-repo-desc">All-in-one personal security & OSINT toolkit for Linux with IP geolocation
+                        and breach detection.</div>
+                    <div class="gh-repo-meta"><i class="fas fa-star"></i> MIT License</div>
+                </a>
+                <a href="https://github.com/ArifAli8866/ai-vuln-scanner" target="_blank" class="gh-repo-card reveal-up"
+                    style="--i:2">
+                    <div class="gh-repo-top">
+                        <i class="fas fa-search gh-repo-icon" style="color:#ef4444"></i>
+                        <span class="gh-repo-lang" style="--lc:#f1e05a">HTML</span>
+                    </div>
+                    <div class="gh-repo-name">ai-vuln-scanner</div>
+                    <div class="gh-repo-desc">AI-powered vulnerability scanner using Groq LLaMA-3 for port scanning and
+                        security analysis.</div>
+                    <div class="gh-repo-meta"><i class="fas fa-code-branch"></i> Active</div>
+                </a>
+                <a href="https://github.com/ArifAli8866/fast-nu-merit-calculator" target="_blank"
+                    class="gh-repo-card reveal-up" style="--i:3">
+                    <div class="gh-repo-top">
+                        <i class="fas fa-graduation-cap gh-repo-icon" style="color:#60a5fa"></i>
+                        <span class="gh-repo-lang" style="--lc:#f1e05a">HTML</span>
+                    </div>
+                    <div class="gh-repo-name">fast-nu-merit-calculator</div>
+                    <div class="gh-repo-desc">FAST NUCES admission aggregate calculator with NU Test, NAT support and
+                        PDF export.</div>
+                    <div class="gh-repo-meta"><i class="fas fa-star"></i> 1 Star</div>
+                </a>
+                <a href="https://github.com/ArifAli8866/linux-soc-monitor" target="_blank"
+                    class="gh-repo-card reveal-up" style="--i:4">
+                    <div class="gh-repo-top">
+                        <i class="fas fa-server gh-repo-icon" style="color:#f97316"></i>
+                        <span class="gh-repo-lang" style="--lc:#89e051">Shell</span>
+                    </div>
+                    <div class="gh-repo-name">linux-soc-monitor</div>
+                    <div class="gh-repo-desc">Professional SOC monitoring tool for Linux with threat detection and email
+                        alerts.</div>
+                    <div class="gh-repo-meta"><i class="fas fa-star"></i> MIT License</div>
+                </a>
+                <a href="https://github.com/ArifAli8866/eid-mubarak-wishes" target="_blank"
+                    class="gh-repo-card reveal-up" style="--i:5">
+                    <div class="gh-repo-top">
+                        <i class="fas fa-moon gh-repo-icon" style="color:#a78bfa"></i>
+                        <span class="gh-repo-lang" style="--lc:#f1e05a">HTML</span>
+                    </div>
+                    <div class="gh-repo-name">eid-mubarak-wishes</div>
+                    <div class="gh-repo-desc">Beautiful personalized Eid Mubarak card generator with live typing and PNG
+                        download.</div>
+                    <div class="gh-repo-meta"><i class="fas fa-code-branch"></i> Active</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ 3. CODING STATS (LeetCode etc.) ════════════ -->
+    <section class="coding-stats" id="coding">
+        <div class="container">
+            <div class="section-eyebrow center">Problem Solving</div>
+            <h2 class="section-h2 center reveal">Coding <span class="grad-text">Stats</span></h2>
+
+            <div class="coding-grid">
+                <!-- LeetCode Card -->
+                <div class="coding-platform-card reveal-left">
+                    <div class="cp-header">
+                        <div class="cp-logo" style="--pc:#ffa116"><i class="fas fa-terminal"></i></div>
+                        <div>
+                            <h3>LeetCode</h3>
+                            <span>@ArifAli8866 <small>(add your handle)</small></span>
+                        </div>
+                        <a href="https://leetcode.com/" target="_blank" class="cp-visit">Visit →</a>
+                    </div>
+                    <div class="cp-stats-row">
+                        <div class="cp-stat">
+                            <div class="cp-circle" style="--cc:#10b981;--cp:75%">
+                                <svg viewBox="0 0 36 36">
+                                    <path
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="rgba(255,255,255,.06)" stroke-width="2.5" />
+                                    <path
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="75,100" />
+                                </svg>
+                                <span>Easy</span>
+                            </div>
+                            <div class="cp-num" style="color:#10b981">—</div>
+                            <div class="cp-lbl">Easy</div>
+                        </div>
+                        <div class="cp-stat">
+                            <div class="cp-circle" style="--cc:#fbbf24;--cp:40%">
+                                <svg viewBox="0 0 36 36">
+                                    <path
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="rgba(255,255,255,.06)" stroke-width="2.5" />
+                                    <path
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="40,100" />
+                                </svg>
+                                <span>Med</span>
+                            </div>
+                            <div class="cp-num" style="color:#fbbf24">—</div>
+                            <div class="cp-lbl">Medium</div>
+                        </div>
+                        <div class="cp-stat">
+                            <div class="cp-circle" style="--cc:#ef4444;--cp:15%">
+                                <svg viewBox="0 0 36 36">
+                                    <path
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="rgba(255,255,255,.06)" stroke-width="2.5" />
+                                    <path
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="15,100" />
+                                </svg>
+                                <span>Hard</span>
+                            </div>
+                            <div class="cp-num" style="color:#ef4444">—</div>
+                            <div class="cp-lbl">Hard</div>
+                        </div>
+                    </div>
+                    <div class="cp-note">
+                        <i class="fas fa-info-circle"></i>
+                        Update your LeetCode handle in <code>main.js</code> → <code>LEETCODE_USERNAME</code>
+                    </div>
+                </div>
+
+                <!-- Competitive Programming Journey -->
+                <div class="coding-platform-card reveal-right">
+                    <div class="cp-header">
+                        <div class="cp-logo" style="--pc:#00d4ff"><i class="fas fa-brain"></i></div>
+                        <div>
+                            <h3>Problem Solving Journey</h3>
+                            <span>DSA Progress at FAST</span>
+                        </div>
+                    </div>
+                    <div class="dsa-progress">
+                        <div class="dsa-item">
+                            <div class="dsa-label"><i class="fas fa-sitemap"></i> Data Structures</div>
+                            <div class="dsa-bar">
+                                <div class="dsa-fill" data-w="80" style="--dc:#00d4ff"></div>
+                            </div>
+                            <span>80%</span>
+                        </div>
+                        <div class="dsa-item">
+                            <div class="dsa-label"><i class="fas fa-project-diagram"></i> Algorithms</div>
+                            <div class="dsa-bar">
+                                <div class="dsa-fill" data-w="72" style="--dc:#7c3aed"></div>
+                            </div>
+                            <span>72%</span>
+                        </div>
+                        <div class="dsa-item">
+                            <div class="dsa-label"><i class="fas fa-code"></i> OOP / Design</div>
+                            <div class="dsa-bar">
+                                <div class="dsa-fill" data-w="90" style="--dc:#ec4899"></div>
+                            </div>
+                            <span>90%</span>
+                        </div>
+                        <div class="dsa-item">
+                            <div class="dsa-label"><i class="fas fa-network-wired"></i> Networking</div>
+                            <div class="dsa-bar">
+                                <div class="dsa-fill" data-w="75" style="--dc:#10b981"></div>
+                            </div>
+                            <span>75%</span>
+                        </div>
+                        <div class="dsa-item">
+                            <div class="dsa-label"><i class="fas fa-shield-alt"></i> Cybersecurity</div>
+                            <div class="dsa-bar">
+                                <div class="dsa-fill" data-w="78" style="--dc:#fbbf24"></div>
+                            </div>
+                            <span>78%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coding Languages Chart -->
+            <div class="lang-chart-wrap reveal">
+                <h3 class="lang-chart-title"><i class="fas fa-chart-pie"></i> Language Distribution</h3>
+                <div class="lang-bars">
+                    <div class="lang-bar-item">
+                        <div class="lang-info"><span>C++</span><span style="color:#06b6d4">35%</span></div>
+                        <div class="lang-track">
+                            <div class="lang-fill" data-w="35" style="--lfc:#06b6d4"></div>
+                        </div>
+                    </div>
+                    <div class="lang-bar-item">
+                        <div class="lang-info"><span>HTML/CSS</span><span style="color:#f97316">28%</span></div>
+                        <div class="lang-track">
+                            <div class="lang-fill" data-w="28" style="--lfc:#f97316"></div>
+                        </div>
+                    </div>
+                    <div class="lang-bar-item">
+                        <div class="lang-info"><span>Python</span><span style="color:#3572A5">22%</span></div>
+                        <div class="lang-track">
+                            <div class="lang-fill" data-w="22" style="--lfc:#3572A5"></div>
+                        </div>
+                    </div>
+                    <div class="lang-bar-item">
+                        <div class="lang-info"><span>JavaScript</span><span style="color:#f1e05a">10%</span></div>
+                        <div class="lang-track">
+                            <div class="lang-fill" data-w="10" style="--lfc:#f1e05a"></div>
+                        </div>
+                    </div>
+                    <div class="lang-bar-item">
+                        <div class="lang-info"><span>Shell / Other</span><span style="color:#89e051">5%</span></div>
+                        <div class="lang-track">
+                            <div class="lang-fill" data-w="5" style="--lfc:#89e051"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ 4. BLOG / ARTICLES ════════════ -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-eyebrow center">Knowledge Sharing</div>
+            <h2 class="section-h2 center reveal">Blog & <span class="grad-text">Articles</span></h2>
+            <p class="blog-subtitle reveal">Sharing what I learn about cybersecurity, web development, and computer
+                science.</p>
+
+            <div class="blog-grid">
+                <div class="blog-card blog-card-featured reveal-up" style="--i:0">
+                    <div class="blog-img-wrap" style="--bc:#00d4ff">
+                        <div class="blog-img-placeholder">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="blog-category">Cybersecurity</div>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Coming Soon</span><span><i
+                                    class="fas fa-clock"></i> 8 min read</span></div>
+                        <h3>How I Built an AI-Powered Vulnerability Scanner with Groq LLaMA-3</h3>
+                        <p>A deep dive into combining AI language models with traditional port scanning to explain
+                            security vulnerabilities in plain English...</p>
+                        <div class="blog-footer">
+                            <div class="blog-tags-row"><span>AI</span><span>Security</span><span>Python</span></div>
+                            <span class="blog-soon-badge">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal-up" style="--i:1">
+                    <div class="blog-img-wrap" style="--bc:#7c3aed">
+                        <div class="blog-img-placeholder"><i class="fas fa-gamepad"></i></div>
+                        <div class="blog-category">Game Dev</div>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Coming Soon</span><span><i
+                                    class="fas fa-clock"></i> 6 min read</span></div>
+                        <h3>Building Tetris in C++ with SFML — From Zero to Game</h3>
+                        <p>How I recreated the classic Tetris game using C++ and SFML graphics library with smooth
+                            animations and ghost pieces...</p>
+                        <div class="blog-footer">
+                            <div class="blog-tags-row"><span>C++</span><span>SFML</span><span>OOP</span></div>
+                            <span class="blog-soon-badge">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal-up" style="--i:2">
+                    <div class="blog-img-wrap" style="--bc:#ec4899">
+                        <div class="blog-img-placeholder"><i class="fas fa-globe"></i></div>
+                        <div class="blog-category">Web Dev</div>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Coming Soon</span><span><i
+                                    class="fas fa-clock"></i> 5 min read</span></div>
+                        <h3>Cracking FAST NUCES — My Self-Taught Journey from Sindh</h3>
+                        <p>The story of how a student from a small town in Sindh used free online resources,
+                            certifications, and persistence to get into Pakistan's top CS university...</p>
+                        <div class="blog-footer">
+                            <div class="blog-tags-row"><span>FAST</span><span>Journey</span><span>Tips</span></div>
+                            <span class="blog-soon-badge">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-cta reveal">
+                <p>Articles coming soon. Follow me on LinkedIn for updates.</p>
+                <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank" class="btn-ghost">
+                    <i class="fab fa-linkedin-in"></i> Follow on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ 5. AI CHATBOT ════════════ -->
+    <!-- Floating chat button -->
+    <button class="chat-fab" id="chatFab" title="Ask AI about Arif">
+        <i class="fas fa-robot" id="chatFabIcon"></i>
+        <span class="chat-fab-ping"></span>
+    </button>
+
+    <!-- Chat window -->
+    <div class="chatbot-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-left">
+                <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                <div>
+                    <div class="chat-name">Ask About Arif</div>
+                    <div class="chat-status"><span class="chat-online"></span> AI Assistant</div>
+                </div>
+            </div>
+            <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-msg bot">
+                <div class="msg-bubble">
+                    👋 Hi! I'm Arif's AI assistant. Ask me anything about his skills, projects, education, or
+                    experience!
+                    <div class="msg-suggestions">
+                        <button onclick="askSuggestion('What are Arif\'s strongest skills?')">💡 Skills</button>
+                        <button onclick="askSuggestion('Tell me about his projects')">🚀 Projects</button>
+                        <button onclick="askSuggestion('Is Arif available for internships?')">💼 Hire</button>
+                        <button onclick="askSuggestion('What certifications does he have?')">📜 Certs</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-wrap">
+            <input type="text" id="chatInput" placeholder="Ask anything about Arif..." maxlength="200">
+            <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-    var typed = new Typed('.typing-text', {
-        strings: ['Computer Science Student', 'Web Developer', 'Cybersecurity Enthusiast', 'C++ Programmer'],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
+    <!-- ════════════ 6. VISITOR COUNTER ════════════ -->
+    <div class="visitor-banner" id="visitorBanner">
+        <div class="vb-inner">
+            <span class="vb-icon"><i class="fas fa-eye"></i></span>
+            <span class="vb-text">Profile viewed <strong id="viewCount">–</strong> times</span>
+            <button class="vb-close" id="vbClose"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+
+
+    <!-- ════════════ FOOTER ════════════ -->
+    <footer class="footer">
+        <div class="footer-glow"></div>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo-bracket">&lt;</span>Arif<span class="logo-slash">/</span>Ali<span
+                        class="logo-bracket">&gt;</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#github">GitHub</a>
+                    <a href="#journey">Journey</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="footer-soc">
+                    <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/ArifAli8866" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/arifali.2007/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-line"></div>
+            <p class="footer-copy">© <span id="yr"></span> <strong>Arif Ali</strong> — Crafted with passion &amp; code
+                💻</p>
+        </div>
+    </footer>
+
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#home" class="mn-item active" data-section="home">
+            <i class="fas fa-home"></i><span>Home</span>
+        </a>
+        <a href="#experience" class="mn-item" data-section="experience">
+            <i class="fas fa-briefcase"></i><span>Work</span>
+        </a>
+        <a href="#projects" class="mn-item" data-section="projects">
+            <i class="fas fa-rocket"></i><span>Projects</span>
+        </a>
+        <a href="#github" class="mn-item" data-section="github">
+            <i class="fab fa-github"></i><span>GitHub</span>
+        </a>
+        <a href="#contact" class="mn-item" data-section="contact">
+            <i class="fas fa-envelope"></i><span>Contact</span>
+        </a>
+    </nav>
+
+    <script src="main.js"></script>
 
 
 
-    const eduCards = document.querySelectorAll('.edu-card, .course-card');
 
-    const revealOnScroll = () => {
-        eduCards.forEach(card => {
-            const cardTop = card.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (cardTop < windowHeight - 100) {
-                card.style.opacity = "1";
-                card.style.transform = "translateY(0)";
-            }
-        });
-    };
-
-    eduCards.forEach(card => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(40px)";
-        card.style.transition = "0.6s ease";
-    });
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-
-
-const projectCards = document.querySelectorAll('.project-card');
-
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const projectObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            // Apply a staggered delay based on the card index
-            setTimeout(() => {
-                entry.target.classList.add('is-visible');
-            }, index * 150); 
-            projectObserver.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-projectCards.forEach(card => {
-    // Set initial styles via JS if not in CSS
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
-    card.style.transition = "all 0.6s ease-out";
-    projectObserver.observe(card);
-});
-
-// Class to trigger via Observer
-document.head.insertAdjacentHTML('beforeend', `
-    <style>
-        .is-visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    </style>
-`);
-
-
-const skillSection = document.querySelector('#skills');
-const progressBars = document.querySelectorAll('.progress-line span');
-const skillNumbers = document.querySelectorAll('.skill-number');
-
-const animateSkills = () => {
-    progressBars.forEach((bar, index) => {
-        // 1. Animate Bar Width
-        const targetWidth = bar.parentElement.getAttribute('data-percent');
-        bar.style.width = targetWidth;
-
-        // 2. Animate Percentage Number
-        const targetNumber = parseInt(targetWidth);
-        let count = 0;
-        const updateCount = () => {
-            if (count < targetNumber) {
-                count++;
-                skillNumbers[index].innerText = count + "%";
-                setTimeout(updateCount, 20);
-            } else {
-                skillNumbers[index].innerText = targetNumber + "%";
-            }
-        };
-        updateCount();
-    });
-};
-
-// Intersection Observer for triggering once
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateSkills();
-            skillObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-skillObserver.observe(skillSection);
-
-// 1. 3D Tilt Effect
-const cards = document.querySelectorAll('.services-box');
-
-cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-        let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-        card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateY(-10px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = `rotateY(0deg) rotateX(0deg) translateY(0px)`;
-    });
-});
-
-// Select all service cards
-const serviceCards = document.querySelectorAll(".card");
-
-serviceCards.forEach((card) => {
-    // Add event listener for mouse enter
-    card.addEventListener("mouseenter", () => {
-        // Remove 'active' class from all cards
-        serviceCards.forEach((c) => c.classList.remove("active"));
-        // Add 'active' class to the current card
-        card.classList.add("active");
-    });
-});
-
-
-const courseCards = document.querySelectorAll('.course-card');
-
-courseCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-
-        card.style.transform = `perspective(1000px) translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = `perspective(1000px) translateY(0) rotateX(0) rotateY(0)`;
-    });
-
-// 1. 3D Hover Tilt Effect
-const testiBoxes = document.querySelectorAll('.testimonial-box');
-
-testiBoxes.forEach(box => {
-    box.addEventListener('mousemove', (e) => {
-        const { offsetWidth: width, offsetHeight: height } = box;
-        const { offsetX: x, offsetY: y } = e;
-        
-        // Calculate rotation (adjust the 20 to change intensity)
-        const moveX = ((x / width) - 0.5) * 20;
-        const moveY = ((y / height) - 0.5) * -20;
-        
-        box.style.transform = `perspective(1000px) rotateX(${moveY}deg) rotateY(${moveX}deg) translateY(-15px)`;
-    });
-
-    box.addEventListener('mouseleave', () => {
-        box.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)`;
-        if(box.classList.contains('featured')) {
-            box.style.transform = `scale(1.05)`;
-        }
-    });
-});
-
-// 2. Scroll Reveal Animation
-const revealTestimonials = () => {
-    const triggerBottom = window.innerHeight / 5 * 4;
-    
-    testiBoxes.forEach(box => {
-        const boxTop = box.getBoundingClientRect().top;
-        
-        if(boxTop < triggerBottom) {
-            box.style.opacity = '1';
-            box.style.transform = box.classList.contains('featured') ? 'scale(1.05)' : 'translateY(0)';
-        }
-    });
-};
-
-// Initial state for reveal
-testiBoxes.forEach(box => {
-    box.style.opacity = '0';
-    box.style.transform = 'translateY(50px)';
-    box.style.transition = 'all 0.8s ease';
-});
-
-window.addEventListener('scroll', revealTestimonials);
-revealTestimonials(); // Run once on load
-
-const contactForm = document.getElementById('contact-form');
-const contactWrapper = document.querySelector('.contact-wrapper');
-
-// 1. 3D Form Wiggle Effect
-contactWrapper.addEventListener('mousemove', (e) => {
-    const rect = contactWrapper.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = (y - centerY) / 30; // Very subtle
-    const rotateY = (centerX - x) / 30;
-
-    contactWrapper.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-});
-
-contactWrapper.addEventListener('mouseleave', () => {
-    contactWrapper.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
-});
-
-// 2. Button Click Animation
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = document.querySelector('.submit-btn');
-    const btnText = btn.querySelector('span');
-    const btnIcon = btn.querySelector('i');
-
-    // Change appearance
-    btnText.innerText = "Sent Successfully!";
-    btn.style.background = "#27ae60"; // Green for success
-    btnIcon.className = "fas fa-check-circle";
-    
-    // Reset after 3 seconds
-    setTimeout(() => {
-        btnText.innerText = "Send Message";
-        btn.style.background = "#008075";
-        btnIcon.className = "fas fa-paper-plane";
-        contactForm.reset();
-    }, 3000);
-});
-
-});
-
-
-// 1. Set Dynamic Year
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-// 2. Magnetic Social Icons Effect
-const socialLinks = document.querySelectorAll('.social-link');
-
-socialLinks.forEach(link => {
-    link.addEventListener('mousemove', (e) => {
-        const rect = link.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-
-        link.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-    });
-
-    link.addEventListener('mouseleave', () => {
-        link.style.transform = `translate(0px, 0px)`;
-    });
-});
-
-// 3. Scroll Reveal for Footer
-window.addEventListener('scroll', () => {
-    const footer = document.querySelector('.footer-area');
-    const scrollPos = window.scrollY + window.innerHeight;
-    if (scrollPos > footer.offsetTop) {
-        footer.style.opacity = '1';
-        footer.style.transition = 'opacity 1s ease-in';
-    }
-});
-
-const profileContainer = document.querySelector('.hero-profile-container');
-
-profileContainer.addEventListener('mousemove', (e) => {
-    const rect = profileContainer.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    // Calculate rotation
-    const rotateX = (y - centerY) / 15;
-    const rotateY = (centerX - x) / 15;
-
-    // Apply 3D tilt and update glow
-    profileContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-});
-
-profileContainer.addEventListener('mouseleave', () => {
-    // Reset position smoothly
-    profileContainer.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
-    profileContainer.style.transition = 'all 0.5s ease';
-});
-
-const aboutWrapper = document.querySelector('.about-profile-wrapper');
-const aboutImg = document.getElementById('about-pic');
-
-aboutWrapper.addEventListener('mousemove', (e) => {
-    const rect = aboutWrapper.getBoundingClientRect();
-    
-    // Calculate mouse position relative to center of the image
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-
-    // Soften the rotation values (higher number = more subtle)
-    const degX = y / 15; 
-    const degY = -x / 15;
-
-    // Apply 3D Rotation to the wrapper
-    aboutWrapper.style.transform = `rotateX(${degX}deg) rotateY(${degY}deg)`;
-    
-    // Slightly move the image inside in the opposite direction for parallax depth
-    aboutImg.style.transform = `translateX(${-x/20}px) translateY(${-y/20}px) scale(1.1)`;
-});
-
-aboutWrapper.addEventListener('mouseleave', () => {
-    // Smooth reset
-    aboutWrapper.style.transform = `rotateX(0deg) rotateY(0deg)`;
-    aboutWrapper.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
-    aboutImg.style.transform = `translateX(0px) translateY(0px) scale(1)`;
-});
-
-// Remove transition during movement for smoothness
-aboutWrapper.addEventListener('mouseenter', () => {
-    aboutWrapper.style.transition = 'none';
-});
-
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('toggle');
-});
-
-// Optional: Close menu when a link is clicked
-document.querySelectorAll('.nav-item').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('toggle');
-    });
-});
-
-    
-    
-</script>
 
 </body>
+
 </html>
-
-
